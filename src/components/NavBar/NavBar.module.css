@@ -1,0 +1,12 @@
+.container {
+  background: linear-gradient(rgb(var(--primary-1)), rgb(var(--primary-2)));
+  display: flex;
+  height: 90px;
+  justify-content: space-between;
+  padding: 22px;
+  width: 100vw;
+}
+
+.sandwhich {
+  margin: auto 7px;
+}
