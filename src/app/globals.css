@@ -1,6 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+
+
 :root {
-  --primary-1: 0, 90, 43;
-  --primary-2: 0, 109, 66;
+  /* THEME COLORS */
+  --color-theme-primary-1: #005a2b;
+  --color-theme-primary-2: #006d42;
+  --color-theme-primary-3: #00b456;
+
+  /* GENERIC COLORS */
+  --color-gray: #808080;
+  --color-white: #ffffff;
+
+  /* COLORS WITH CUSTOM OPACITY */
+  --color-gray-50: #80808080;
+
+  /* FONTS */
+  --font-primary: 'Roboto', sans-serif;
+  --font-secondary: 'Orbitron', sans-serif;  
 }
 
 @media (prefers-color-scheme: dark) {
@@ -26,6 +43,10 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+li {
+  display: flex;
 }
 
 @media (prefers-color-scheme: dark) {

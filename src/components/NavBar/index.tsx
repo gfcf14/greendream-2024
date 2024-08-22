@@ -1,28 +1,60 @@
+'use client';
+
 import Image from 'next/image';
 import styles from './NavBar.module.css';
 import useDeviceType from '@/utils/useDeviceType';
+import Button from '@/components/Button';
 
 const NavBar: React.FC = () => {
   const { isTabletOrSmaller, isDesktopOrLarger } = useDeviceType();
 
-  console.log(isTabletOrSmaller);
+  const menu = isDesktopOrLarger && (
+    <li className={styles.menu}>
+      <button className={styles['menu-option']}>
+        PROGRAMS
+      </button>
+      <button className={styles['menu-option']}>
+        GAMES
+      </button>
+      <button className={styles['menu-option']}>
+        ARTICLES
+      </button>
+      <button className={styles['menu-option']}>
+        ABOUT
+      </button>
+      <span className={styles.separator}></span>
+      <Button action='contact' type='menu' />
+    </li>
+  );
 
-  return (
-    <div className={styles.container}>
-      <Image
-        alt='GreenDream logo'
-        src='/images/logo.svg'
-        width={162}
-        height={46}
-      />
+  const mobileMenu = isTabletOrSmaller && (
+    <li>
       <Image
         alt='Sandwhich'
         className={styles.sandwhich}
-        src='/images/sandwhich.svg'
-        width={36}
         height={32}
+        src='/images/sandwhich.svg'
+        width={36}        
       />
-    </div>
+    </li>
+  )
+
+
+  return (
+    <nav>
+      <ul className={styles.container}>
+        <li>
+          <Image
+            alt='GreenDream logo'
+            height={46}
+            src='/images/logo.svg'
+            width={162}            
+          />
+        </li>
+        {menu}
+        {mobileMenu}
+      </ul>
+    </nav>
   )
 }
 
