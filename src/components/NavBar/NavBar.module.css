@@ -22,12 +22,15 @@
   border: none;
   color: var(--color-white);
   font: bold 20px var(--font-primary);
+  height: 24px;
   margin: auto 45px auto 0;
   width: 110px;
 }
 .menu-option p {
   cursor: pointer;
   display: inline-block;
+  height: 24px;
+  margin: 0;
 }
 .menu-option p::after {
   border-bottom: 3px solid var(--color-white);
