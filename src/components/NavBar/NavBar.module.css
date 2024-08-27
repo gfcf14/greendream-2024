@@ -1,3 +1,7 @@
+#logo {
+  cursor: pointer;
+}
+
 .container {
   background: linear-gradient(var(--color-theme-primary-1), var(--color-theme-primary-2));
   display: flex;
@@ -20,6 +24,24 @@
   font: bold 20px var(--font-primary);
   margin: auto 45px auto 0;
   width: 110px;
+}
+.menu-option p {
+  cursor: pointer;
+  display: inline-block;
+}
+.menu-option p::after {
+  border-bottom: 3px solid var(--color-white);
+  content: '';
+  display: block;
+  height: 3px;
+  margin: 0 auto;
+  transform: scaleX(0);
+  transition: transform 0.3s, width 0.3s ease-in-out;
+  width: 0;
+}
+.menu-option:hover p::after {
+  transform: scaleX(1);
+  width: 100%;
 }
 
 .sandwhich {

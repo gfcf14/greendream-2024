@@ -4,9 +4,13 @@
   background: linear-gradient(var(--color-theme-primary-3), var(--color-theme-primary-1));
   border: 0.5px solid var(--color-theme-primary-3);
   border-radius: 50%;
+  cursor: pointer;
   display: flex;
   height: 42px;
   width: 42px;
+}
+.button-menu:hover, .button-menu:focus {
+  filter: brightness(1.5);
 }
 
 .icon {

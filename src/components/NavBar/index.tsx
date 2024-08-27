@@ -11,16 +11,16 @@ const NavBar: React.FC = () => {
   const menu = isDesktopOrLarger && (
     <li className={styles.menu}>
       <button className={styles['menu-option']}>
-        PROGRAMS
+        <p>PROGRAMS</p>
       </button>
       <button className={styles['menu-option']}>
-        GAMES
+        <p>GAMES</p>
       </button>
       <button className={styles['menu-option']}>
-        ARTICLES
+        <p>ARTICLES</p>
       </button>
       <button className={styles['menu-option']}>
-        ABOUT
+        <p>ABOUT</p>
       </button>
       <span className={styles.separator}></span>
       <Button action='contact' type='menu' />
@@ -47,6 +47,7 @@ const NavBar: React.FC = () => {
           <Image
             alt='GreenDream logo'
             height={46}
+            id={styles.logo}
             src='/images/logo.svg'
             width={162}            
           />
