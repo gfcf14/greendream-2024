@@ -26,19 +26,17 @@ const NavBar: React.FC = () => {
     <>
       <Overlay className={openClass} onClick={closeMobileMenu} />
       <nav>
-        <ul className={styles.container}>
-          <li>
-            <Image
-              alt="GreenDream logo"
-              height={46}
-              id={styles.logo}
-              src="/images/logo.svg"
-              width={162}
-            />
-          </li>
+        <div className={styles.container}>
+          <Image
+            alt="GreenDream logo"
+            height={46}
+            id={styles.logo}
+            src="/images/logo.svg"
+            width={162}
+          />
           {isDesktopOrLarger && <Menu />}
           {isTabletOrSmaller && <Sandwich onClick={openMobileMenu} />}
-        </ul>
+        </div>
         {isMobile && (
           <MobileSidesheet className={openClass} onClick={closeMobileMenu} />
         )}

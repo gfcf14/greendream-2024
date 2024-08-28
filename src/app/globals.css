@@ -8,10 +8,12 @@
   --color-theme-primary-2: #006d42;
   --color-theme-primary-3: #00b456;
   --color-theme-secondary-1: #002d16;
+  --color-theme-secondary-2: #00a899;
 
   /* GENERIC COLORS */
   --color-black: #000000;
   --color-gray: #808080;
+  --color-silver: #b8b8b8;
   --color-white: #ffffff;
 
   /* COLORS WITH CUSTOM OPACITY */

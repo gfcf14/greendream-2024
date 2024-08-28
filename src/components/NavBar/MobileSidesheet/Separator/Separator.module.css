@@ -1,0 +1,14 @@
+.separator {
+  color: var(--color-silver);
+  font: 12px var(--font-secondary);
+  height: 14px;
+  margin: 0 0 16px;
+  width: 100%;
+}
+.separator::after {
+  background: var(--color-silver);
+  content: '';
+  display: block;
+  height: 1px;
+  width: 100%;
+}

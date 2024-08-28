@@ -1,3 +1,7 @@
+#menu-container {
+  display: flex;
+}
+
 .menu-option {
   background: transparent;
   border: none;

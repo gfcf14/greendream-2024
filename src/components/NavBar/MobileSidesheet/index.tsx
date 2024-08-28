@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import styles from './MobileSidesheet.module.css';
+import Separator from './Separator';
 
 interface MobileSidesheetProps {
   className: string;
@@ -20,6 +21,37 @@ const MobileSidesheet: React.FC<MobileSidesheetProps> = ({
         src="/images/close.svg"
         width={34}
       />
+      <Separator text="MENU" />
+      <ul className={styles['mobile-menu-section']}>
+        <li>
+          <button className={styles['menu-option']}>
+            <p>PROGRAMS</p>
+          </button>
+        </li>
+        <li>
+          <button className={styles['menu-option']}>
+            <p>GAMES</p>
+          </button>
+        </li>
+        <li>
+          <button className={styles['menu-option']}>
+            <p>ARTICLES</p>
+          </button>
+        </li>
+        <li>
+          <button className={styles['menu-option']}>
+            <p>ABOUT</p>
+          </button>
+        </li>
+      </ul>
+      <Separator text="ACTIONS" />
+      <ul className={styles['mobile-menu-section']}>
+        <li>
+          <button className={styles['menu-option']}>
+            <p>CONTACT</p>
+          </button>
+        </li>
+      </ul>
     </aside>
   );
 };
