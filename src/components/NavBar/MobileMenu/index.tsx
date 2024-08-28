@@ -2,15 +2,12 @@ import Image from 'next/image';
 import styles from './MobileSidesheet.module.css';
 import Separator from './Separator';
 
-interface MobileSidesheetProps {
+interface MobileMenuProps {
   className: string;
   onClick: () => void;
 }
 
-const MobileSidesheet: React.FC<MobileSidesheetProps> = ({
-  className,
-  onClick,
-}) => {
+const MobileMenu: React.FC<MobileMenuProps> = ({ className, onClick }) => {
   return (
     <aside className={styles[className]} id={styles['menu-mobile']}>
       <Image
@@ -56,4 +53,4 @@ const MobileSidesheet: React.FC<MobileSidesheetProps> = ({
   );
 };
 
-export default MobileSidesheet;
+export default MobileMenu;

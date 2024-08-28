@@ -7,7 +7,7 @@ import useDeviceType from '@/utils/useDeviceType';
 import Overlay from './Overlay';
 import Menu from './Menu';
 import Sandwich from './Sandwich';
-import MobileSidesheet from './MobileSidesheet';
+import MobileMenu from './MobileMenu';
 
 const NavBar: React.FC = () => {
   const { isDesktopOrLarger, isMobile, isTabletOrSmaller } = useDeviceType();
@@ -38,7 +38,7 @@ const NavBar: React.FC = () => {
           {isTabletOrSmaller && <Sandwich onClick={openMobileMenu} />}
         </div>
         {isMobile && (
-          <MobileSidesheet className={openClass} onClick={closeMobileMenu} />
+          <MobileMenu className={openClass} onClick={closeMobileMenu} />
         )}
       </nav>
     </>
