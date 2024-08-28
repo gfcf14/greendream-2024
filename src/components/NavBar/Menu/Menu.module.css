@@ -1,0 +1,36 @@
+.menu-option {
+  background: transparent;
+  border: none;
+  color: var(--color-white);
+  font: bold 20px var(--font-primary);
+  height: 24px;
+  margin: auto 45px auto 0;
+  width: 110px;
+}
+.menu-option p {
+  cursor: pointer;
+  display: inline-block;
+  height: 24px;
+  margin: 0;
+}
+.menu-option p::after {
+  border-bottom: 3px solid var(--color-white);
+  content: '';
+  display: block;
+  height: 3px;
+  margin: 0 auto;
+  transform: scaleX(0);
+  transition: transform 0.3s, width 0.3s ease-in-out;
+  width: 0;
+}
+.menu-option:hover p::after {
+  transform: scaleX(1);
+  width: 100%;
+}
+
+.separator {
+  background: linear-gradient(var(--color-gray), var(--color-gray-50));
+  height: 42px;
+  margin: auto 45px auto 0;
+  width: 1px;
+}

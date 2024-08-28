@@ -5,6 +5,6 @@
   ],
   "ignorePatterns": ["*.svg"],
   "rules": {
-    // Add or customize rules as needed
+    "endOfLine": "auto"
   }
 }
