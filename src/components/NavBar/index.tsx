@@ -8,7 +8,7 @@ import Button from '@/components/Button';
 
 const NavBar: React.FC = () => {
   const { isDesktopOrLarger, isMobile, isTabletOrSmaller } = useDeviceType();
-  const [ isMobileMenuOpen, setMobileMenuOpen ] = useState(false);
+  const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
   const openClass = isMobileMenuOpen ? styles.open : '';
 
   const openMobileMenu = () => {
@@ -34,64 +34,57 @@ const NavBar: React.FC = () => {
         <p>ABOUT</p>
       </button>
       <span className={styles.separator}></span>
-      <Button action='contact' type='menu' />
+      <Button action="contact" type="menu" />
     </li>
   );
 
   const mobileMenu = isTabletOrSmaller && (
     <li>
       <Image
-        alt='Sandwhich'
+        alt="Sandwhich"
         height={32}
         id={styles.sandwhich}
         onClick={openMobileMenu}
-        src='/images/sandwhich.svg'
-        width={36}        
+        src="/images/sandwhich.svg"
+        width={36}
       />
     </li>
   );
 
   const mobileSidesheet = isMobile && (
-    <aside
-      className={openClass}
-      id={styles['menu-mobile']}
-    >
+    <aside className={openClass} id={styles['menu-mobile']}>
       <Image
-        alt='Close Mobile Menu'
+        alt="Close Mobile Menu"
         id={styles['menu-close-mobile']}
         height={34}
         onClick={closeMobileMenu}
-        src='/images/close.svg'
-        width={34}        
+        src="/images/close.svg"
+        width={34}
       />
     </aside>
   );
 
   return (
     <>
-      <div
-        className={openClass}
-        id={styles.overlay}
-        onClick={closeMobileMenu}
-      >
+      <div className={openClass} id={styles.overlay} onClick={closeMobileMenu}>
         <Image
-          alt='Single Letter Logo'
+          alt="Single Letter Logo"
           className={openClass}
           height={46}
           id={styles['logo-single-letter']}
-          src='/images/logo-single-letter.svg'
-          width={36.32}            
+          src="/images/logo-single-letter.svg"
+          width={36.32}
         />
-      </div>      
+      </div>
       <nav>
         <ul className={styles.container}>
           <li>
             <Image
-              alt='GreenDream logo'
+              alt="GreenDream logo"
               height={46}
               id={styles.logo}
-              src='/images/logo.svg'
-              width={162}            
+              src="/images/logo.svg"
+              width={162}
             />
           </li>
           {menu}
@@ -100,7 +93,7 @@ const NavBar: React.FC = () => {
         {mobileSidesheet}
       </nav>
     </>
-  )
-}
+  );
+};
 
 export default NavBar;

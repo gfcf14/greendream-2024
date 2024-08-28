@@ -1,17 +1,25 @@
 'use client';
 
-import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
+import React, {
+  createContext,
+  useContext,
+  useState,
+  useEffect,
+  ReactNode,
+} from 'react';
 
 type ViewportContextType = {
   width: number;
   height: number;
 };
 
-const ViewportContext = createContext<ViewportContextType | undefined>(undefined);
+const ViewportContext = createContext<ViewportContextType | undefined>(
+  undefined,
+);
 
 export const ViewportProvider = ({ children }: { children: ReactNode }) => {
   const [size, setSize] = useState<ViewportContextType>({
-    width: 0,  // Initialize with 0, because the actual value will be set on the client
+    width: 0, // Initialize with 0, because the actual value will be set on the client
     height: 0,
   });
 
@@ -33,11 +41,9 @@ export const ViewportProvider = ({ children }: { children: ReactNode }) => {
   }, []);
 
   return (
-    <ViewportContext.Provider value={size}>
-      {children}
-    </ViewportContext.Provider>
+    <ViewportContext.Provider value={size}>{children}</ViewportContext.Provider>
   );
-}
+};
 
 export const useViewport = () => {
   const context = useContext(ViewportContext);
@@ -45,4 +51,4 @@ export const useViewport = () => {
     throw new Error('useViewport must be used within a ViewportProvider');
   }
   return context;
-}
+};

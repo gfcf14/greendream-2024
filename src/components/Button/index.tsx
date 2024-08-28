@@ -5,13 +5,10 @@ import { buttonActionIcons } from '@/constants';
 interface ButtonProps {
   action?: string;
   type: 'body' | 'menu';
-};
+}
 
-const Button: React.FC<ButtonProps> = ({
-  action = '',
-  type
-}) => {
-  const {height, url, width } = buttonActionIcons[action] || {};
+const Button: React.FC<ButtonProps> = ({ action = '', type }) => {
+  const { height, url, width } = buttonActionIcons[action] || {};
 
   return (
     <button className={styles[`button-${type}`]}>
@@ -21,11 +18,11 @@ const Button: React.FC<ButtonProps> = ({
           className={styles.icon}
           height={height}
           src={`/images/${url}`}
-          width={width}          
+          width={width}
         />
       )}
     </button>
-  )
-}
+  );
+};
 
 export default Button;

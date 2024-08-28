@@ -1,3 +1,10 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": [
+    "next/core-web-vitals",
+    "plugin:prettier/recommended"
+  ],
+  "ignorePatterns": ["*.svg"],
+  "rules": {
+    // Add or customize rules as needed
+  }
 }

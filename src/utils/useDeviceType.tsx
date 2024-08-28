@@ -10,7 +10,7 @@ const useDeviceType = () => {
   const isTabletOrSmaller = width <= 1024;
   const isDesktopOrLarger = width > 1024;
 
-  return { 
+  return {
     isMobile,
     isTablet,
     isDesktop,
@@ -18,6 +18,6 @@ const useDeviceType = () => {
     isTabletOrSmaller,
     isDesktopOrLarger,
   };
-}
+};
 
 export default useDeviceType;
