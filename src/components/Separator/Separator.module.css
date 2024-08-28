@@ -12,3 +12,9 @@
   height: 1px;
   width: 100%;
 }
+
+@media (min-width: 769px) {
+  .separator {
+    margin: 0 0 32px;
+  }
+}

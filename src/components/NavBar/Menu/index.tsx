@@ -25,7 +25,7 @@ const Menu: React.FC = () => {
         </button>
       </li>
       <li>
-        <span className={styles.separator}></span>
+        <span className={styles.divider}></span>
       </li>
       <li>
         <Button action="contact" type="menu" />

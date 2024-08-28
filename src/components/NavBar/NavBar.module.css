@@ -9,10 +9,17 @@
   justify-content: space-between;
   list-style-type: none;
   padding: 22px 29px 22px 22px;
+  position: relative;
   width: 100vw;
 }
 
-@media screen and(min-width: 1025px) {
+@media (min-width: 769px) {
+  .container {
+    z-index: 4;
+  }
+}
+
+@media (min-width: 1025px) {
   .container {
     padding: 22px 45px 22px 22px;
   }

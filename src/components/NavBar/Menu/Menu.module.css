@@ -2,6 +2,13 @@
   display: flex;
 }
 
+.divider {
+  background: linear-gradient(var(--color-gray), var(--color-gray-50));
+  height: 42px;
+  margin: auto 45px auto 0;
+  width: 1px;
+}
+
 .menu-option {
   background: transparent;
   border: none;
@@ -30,11 +37,4 @@
 .menu-option:hover p::after {
   transform: scaleX(1);
   width: 100%;
-}
-
-.separator {
-  background: linear-gradient(var(--color-gray), var(--color-gray-50));
-  height: 42px;
-  margin: auto 45px auto 0;
-  width: 1px;
 }

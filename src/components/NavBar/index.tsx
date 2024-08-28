@@ -8,9 +8,11 @@ import Overlay from './Overlay';
 import Menu from './Menu';
 import Sandwich from './Sandwich';
 import MobileMenu from './MobileMenu';
+import TabletMenu from './TabletMenu';
 
 const NavBar: React.FC = () => {
-  const { isDesktopOrLarger, isMobile, isTabletOrSmaller } = useDeviceType();
+  const { isDesktopOrLarger, isMobile, isTablet, isTabletOrSmaller } =
+    useDeviceType();
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
   const openClass = isMobileMenuOpen ? 'open' : '';
 
@@ -24,7 +26,12 @@ const NavBar: React.FC = () => {
 
   return (
     <>
-      <Overlay className={openClass} onClick={closeMobileMenu} />
+      <Overlay
+        className={openClass}
+        isMobile={isMobile}
+        onClick={closeMobileMenu}
+      />
+      {isTablet && <TabletMenu className={openClass} />}
       <nav>
         <div className={styles.container}>
           <Image

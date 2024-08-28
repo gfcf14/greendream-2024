@@ -1,25 +1,15 @@
-import Image from 'next/image';
 import Separator from '@/components/Separator';
-import styles from './MobileMenu.module.css';
+import styles from './TabletMenu.module.css';
 
-interface MobileMenuProps {
+interface TabletMenuProps {
   className: string;
-  onClick: () => void;
 }
 
-const MobileMenu: React.FC<MobileMenuProps> = ({ className, onClick }) => {
+const TabletMenu: React.FC<TabletMenuProps> = ({ className }) => {
   return (
-    <aside className={styles[className]} id={styles['menu-mobile']}>
-      <Image
-        alt="Close Mobile Menu"
-        id={styles['menu-close-mobile']}
-        height={34}
-        onClick={onClick}
-        src="/images/close.svg"
-        width={34}
-      />
+    <div className={styles[className]} id={styles['tablet-menu']}>
       <Separator text="MENU" />
-      <ul className={styles['mobile-menu-section']}>
+      <ul className={styles['tablet-menu-section']}>
         <li>
           <button className={styles['menu-option']}>
             <p>PROGRAMS</p>
@@ -42,15 +32,15 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ className, onClick }) => {
         </li>
       </ul>
       <Separator text="ACTIONS" />
-      <ul className={styles['mobile-menu-section']}>
+      <ul className={styles['tablet-menu-section']}>
         <li>
           <button className={styles['menu-option']}>
             <p>CONTACT</p>
           </button>
         </li>
       </ul>
-    </aside>
+    </div>
   );
 };
 
-export default MobileMenu;
+export default TabletMenu;
