@@ -1,20 +1,21 @@
-import Image from 'next/image';
 import styles from './Sandwich.module.css';
 
 interface SandwichProps {
+  className: string;
   onClick: () => void;
 }
 
-const Sandwich: React.FC<SandwichProps> = ({ onClick }) => {
+const Sandwich: React.FC<SandwichProps> = ({ className, onClick }) => {
   return (
-    <Image
-      alt="Sandwich"
-      height={32}
-      id={styles.sandwich}
-      onClick={onClick}
-      src="/images/sandwich.svg"
-      width={36}
-    />
+    <div id={styles.wrapper} onClick={onClick}>
+      <div id={styles.container}>
+        <div className={styles[className]} id={styles.burger}>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </div>
   );
 };
 

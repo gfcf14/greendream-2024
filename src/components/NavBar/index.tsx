@@ -42,7 +42,12 @@ const NavBar: React.FC = () => {
             width={162}
           />
           {isDesktopOrLarger && <Menu />}
-          {isTabletOrSmaller && <Sandwich onClick={openMobileMenu} />}
+          {isTabletOrSmaller && (
+            <Sandwich
+              className={openClass}
+              onClick={isMobileMenuOpen ? closeMobileMenu : openMobileMenu}
+            />
+          )}
         </div>
         {isMobile && (
           <MobileMenu className={openClass} onClick={closeMobileMenu} />
