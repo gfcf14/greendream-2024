@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Separator from '@/components/Separator';
 import styles from './MobileMenu.module.css';
+import MenuOption from '../MenuOption';
 
 interface MobileMenuProps {
   className: string;
@@ -20,34 +21,14 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ className, onClick }) => {
       />
       <Separator text="MENU" />
       <ul className={styles['mobile-menu-section']}>
-        <li>
-          <button className={styles['menu-option']}>
-            <p>PROGRAMS</p>
-          </button>
-        </li>
-        <li>
-          <button className={styles['menu-option']}>
-            <p>GAMES</p>
-          </button>
-        </li>
-        <li>
-          <button className={styles['menu-option']}>
-            <p>ARTICLES</p>
-          </button>
-        </li>
-        <li>
-          <button className={styles['menu-option']}>
-            <p>ABOUT</p>
-          </button>
-        </li>
+        <MenuOption text="PROGRAMS" />
+        <MenuOption text="GAMES" />
+        <MenuOption text="ARTICLES" />
+        <MenuOption text="ABOUT" />
       </ul>
       <Separator text="ACTIONS" />
       <ul className={styles['mobile-menu-section']}>
-        <li>
-          <button className={styles['menu-option']}>
-            <p>CONTACT</p>
-          </button>
-        </li>
+        <MenuOption text="CONTACT" />
       </ul>
     </aside>
   );
