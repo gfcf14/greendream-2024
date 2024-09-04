@@ -5,6 +5,7 @@
 .container {
   background: linear-gradient(var(--color-theme-primary-1), var(--color-theme-primary-2));
   display: flex;
+  filter: drop-shadow(0 4px 4px var(--color-black-25));
   height: 90px;
   justify-content: space-between;
   list-style-type: none;

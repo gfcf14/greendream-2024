@@ -17,7 +17,7 @@ const Overlay: React.FC<OverlayProps> = ({ className, isMobile, onClick }) => {
           height={46}
           id={styles['logo-single-letter']}
           src="/images/logo-single-letter.svg"
-          width={36.32}
+          width={36}
         />
       )}
     </div>
