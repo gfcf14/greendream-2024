@@ -4,15 +4,16 @@ import { buttonActionIcons } from '@/constants';
 
 interface ButtonProps {
   action?: string;
-  type: 'body' | 'menu';
+  text?: string;
+  type: 'hero' | 'menu' | 'primary' | 'secondary';
 }
 
-const Button: React.FC<ButtonProps> = ({ action = '', type }) => {
+const Button: React.FC<ButtonProps> = ({ action = '', text = '', type }) => {
   const { height, url, width } = buttonActionIcons[action] || {};
 
   return (
     <button className={styles[`button-${type}`]}>
-      {action && (
+      {action ? (
         <Image
           alt={`action-${action}`}
           className={styles.icon}
@@ -20,6 +21,8 @@ const Button: React.FC<ButtonProps> = ({ action = '', type }) => {
           src={`/images/${url}`}
           width={width}
         />
+      ) : (
+        <>{text}</>
       )}
     </button>
   );

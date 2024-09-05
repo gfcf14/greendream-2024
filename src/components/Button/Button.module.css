@@ -1,4 +1,18 @@
-.button-body {}
+.button-hero {
+  background: var(--color-theme-button-primary);
+  border: 0;
+  border-radius: 4px;
+  color: var(--color-white);
+  cursor: pointer;
+  filter: drop-shadow(0 4px 4px var(--color-black-25));
+  font: 16px var(--font-secondary);
+  margin: auto 0 0;
+  padding: 15px;
+  width: 100%;
+}
+.button-hero:hover, .button-hero:focus {
+  filter: brightness(1.25);
+}
 
 .button-menu {
   background: linear-gradient(var(--color-theme-primary-3), var(--color-theme-primary-1));
@@ -15,4 +29,28 @@
 
 .icon {
   margin: auto;
+}
+
+@media (min-width: 769px) {
+  .button-hero {
+    font-size: 18px;
+    margin: 32px 0 0;
+    padding: 10px 24px;
+    width: 352px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .button-hero {
+    font-size: 24px;
+    margin: 24px auto 0;
+    padding: 12px;
+    width: 55.55vw;
+  }
+}
+
+@media (min-width: 1920px) {
+  .button-hero {
+    width: 41.66vw;
+  }
 }
