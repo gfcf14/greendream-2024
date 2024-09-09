@@ -1,11 +1,10 @@
 import Hero from '@/components/Hero';
-import NavBar from '@/components/NavBar';
+import Page from '@/components/Page';
 
 export default function Home() {
   return (
-    <>
-      <NavBar />
+    <Page>
       <Hero />
-    </>
+    </Page>
   );
 }
