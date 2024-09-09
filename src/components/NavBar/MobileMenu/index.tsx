@@ -1,7 +1,8 @@
 import Image from 'next/image';
 import Separator from '@/components/Separator';
-import styles from './MobileMenu.module.css';
+import { renderMenuOptions } from '@/helpers/renderMenuOptions';
 import MenuOption from '../MenuOption';
+import styles from './MobileMenu.module.css';
 
 interface MobileMenuProps {
   className: string;
@@ -20,12 +21,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ className, onClick }) => {
         width={34}
       />
       <Separator text="MENU" />
-      <ul className={styles['mobile-menu-section']}>
-        <MenuOption link="/programs" text="PROGRAMS" />
-        <MenuOption link="/games" text="GAMES" />
-        <MenuOption link="/articles" text="ARTICLES" />
-        <MenuOption link="/about" text="ABOUT" />
-      </ul>
+      <ul className={styles['mobile-menu-section']}>{renderMenuOptions()}</ul>
       <Separator text="ACTIONS" />
       <ul className={styles['mobile-menu-section']}>
         <MenuOption text="CONTACT" />

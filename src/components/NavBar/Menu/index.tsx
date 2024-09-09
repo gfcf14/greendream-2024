@@ -1,14 +1,11 @@
 import Button from '@/components/Button';
+import { renderMenuOptions } from '@/helpers/renderMenuOptions';
 import styles from './Menu.module.css';
-import MenuOption from '../MenuOption';
 
 const Menu: React.FC = () => {
   return (
     <ul id={styles['menu-container']}>
-      <MenuOption link="/programs" text="PROGRAMS" />
-      <MenuOption link="/games" text="GAMES" />
-      <MenuOption link="/articles" text="ARTICLES" />
-      <MenuOption link="/about" text="ABOUT" />
+      {renderMenuOptions()}
       <li>
         <span className={styles.divider}></span>
       </li>

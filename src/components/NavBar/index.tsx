@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import styles from './NavBar.module.css';
 import useDeviceType from '@/utils/useDeviceType';
 import Overlay from './Overlay';
@@ -34,13 +35,15 @@ const NavBar: React.FC = () => {
       {isTablet && <TabletMenu className={openClass} />}
       <nav>
         <div className={styles.container}>
-          <Image
-            alt="GreenDream logo"
-            height={46}
-            id={styles.logo}
-            src="/images/logo.svg"
-            width={162}
-          />
+          <Link href="/">
+            <Image
+              alt="GreenDream logo"
+              height={46}
+              id={styles.logo}
+              src="/images/logo.svg"
+              width={162}
+            />
+          </Link>
           {isDesktopOrLarger && <Menu />}
           {isTabletOrSmaller && (
             <Sandwich
