@@ -21,10 +21,10 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ className, onClick }) => {
       />
       <Separator text="MENU" />
       <ul className={styles['mobile-menu-section']}>
-        <MenuOption text="PROGRAMS" />
-        <MenuOption text="GAMES" />
-        <MenuOption text="ARTICLES" />
-        <MenuOption text="ABOUT" />
+        <MenuOption link="/programs" text="PROGRAMS" />
+        <MenuOption link="/games" text="GAMES" />
+        <MenuOption link="/articles" text="ARTICLES" />
+        <MenuOption link="/about" text="ABOUT" />
       </ul>
       <Separator text="ACTIONS" />
       <ul className={styles['mobile-menu-section']}>

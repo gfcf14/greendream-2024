@@ -5,10 +5,10 @@ import MenuOption from '../MenuOption';
 const Menu: React.FC = () => {
   return (
     <ul id={styles['menu-container']}>
-      <MenuOption text="PROGRAMS" />
-      <MenuOption text="GAMES" />
-      <MenuOption text="ARTICLES" />
-      <MenuOption text="ABOUT" />
+      <MenuOption link="/programs" text="PROGRAMS" />
+      <MenuOption link="/games" text="GAMES" />
+      <MenuOption link="/articles" text="ARTICLES" />
+      <MenuOption link="/about" text="ABOUT" />
       <li>
         <span className={styles.divider}></span>
       </li>
