@@ -1,14 +1,16 @@
 import NavBar from '@/components/NavBar';
+import styles from './Page.module.css';
 
 interface PageProps {
   children: React.ReactNode;
+  isHero?: boolean;
 }
 
-const Page: React.FC<PageProps> = ({ children }) => {
+const Page: React.FC<PageProps> = ({ children, isHero = false }) => {
   return (
     <>
       <NavBar />
-      {children}
+      <div className={isHero ? '' : styles.page}>{children}</div>
     </>
   );
 };

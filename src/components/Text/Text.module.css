@@ -1,3 +1,9 @@
+.body {
+  color: var(--color-black);
+  font: 14px var(--font-primary);
+  margin: 0 auto 32px;
+}
+
 .hero {
   color: var(--color-theme-primary-1);
   filter: drop-shadow(0 4px 4px var(--color-black-30));
@@ -5,15 +11,43 @@
   margin: 0;
 }
 
+.title {
+  color: var(--color-theme-primary-1);
+  font: bold 24px var(--font-secondary);
+  height: 28px;
+  line-height: 28px;
+  margin: 0 auto 32px;
+}
+
 @media (min-width: 769px) {
+  .body {
+    font-size: 16px;
+  }
+
   .hero {
     font-size: 18px;
+  }
+
+  .title {
+    font-size: 32px;
+    height: 36px;
+    line-height: 36px;
   }
 }
 
 @media (min-width: 1025px) {
+  .body {
+    font-size: 24px;
+  }
+
   .hero {
     font-size: 24px;
+  }
+
+  .title {
+    font-size: 36px;
+    height: 40px;
+    line-height: 40px;
   }
 }
 

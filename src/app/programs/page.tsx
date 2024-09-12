@@ -1,6 +1,7 @@
 'use client';
 
 import Page from '@/components/Page';
+import Text from '@/components/Text';
 import { useEffect, useState } from 'react';
 
 export default function Home() {
@@ -17,5 +18,10 @@ export default function Home() {
 
   console.log(programs);
 
-  return <Page>{'Programs Page'}</Page>;
+  return (
+    <Page>
+      <Text content="PROGRAMS" type="title" />
+      <Text content="These are the programs I have developed" type="body" />
+    </Page>
+  );
 }
