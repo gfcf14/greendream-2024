@@ -21,13 +21,6 @@
   width: 100%;
 }
 
-.hero-text {
-  color: var(--color-theme-primary-1);
-  filter: drop-shadow(0 4px 4px var(--color-black-30));
-  font: 14px var(--font-primary);
-  margin: 0;
-}
-
 @media (min-width: 769px) {
   /* #hero {
     height: 934px; 
@@ -35,10 +28,6 @@
   .hero-text-container {
     padding: 24px;
     width: 352px;
-  }
-
-  .hero-text {
-    font-size: 18px;
   }
 }
 
@@ -53,10 +42,6 @@
   .hero-text-container {
     margin: auto auto 0;
     width: 55.55vw;
-  }
-
-  .hero-text {
-    font-size: 24px;
   }
 }
 

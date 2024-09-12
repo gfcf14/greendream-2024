@@ -1,0 +1,22 @@
+.hero {
+  color: var(--color-theme-primary-1);
+  filter: drop-shadow(0 4px 4px var(--color-black-30));
+  font: 14px var(--font-primary);
+  margin: 0;
+}
+
+@media (min-width: 769px) {
+  .hero {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .hero {
+    font-size: 24px;
+  }
+}
+
+/* @media (min-width: 1920px) {
+
+} */
