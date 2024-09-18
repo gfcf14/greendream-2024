@@ -2,11 +2,19 @@ import Image from 'next/image';
 import styles from './Button.module.css';
 import { buttonActionIcons } from '@/constants';
 
-interface ButtonProps {
-  action?: string;
-  text?: string;
-  type: 'hero' | 'menu' | 'primary' | 'secondary';
+interface ButtonWithAction {
+  action: string;
+  text?: never;
+  type: 'menu';
 }
+
+interface ButtonWithText {
+  action?: never;
+  text: string;
+  type: 'hero' | 'primary' | 'secondary';
+}
+
+type ButtonProps = ButtonWithAction | ButtonWithText;
 
 const Button: React.FC<ButtonProps> = ({ action = '', text = '', type }) => {
   const { height, url, width } = buttonActionIcons[action] || {};
