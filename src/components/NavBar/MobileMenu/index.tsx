@@ -5,11 +5,11 @@ import MenuOption from '../MenuOption';
 import styles from './MobileMenu.module.css';
 
 interface MobileMenuProps {
-  className: string;
+  className?: string;
   onClick: () => void;
 }
 
-const MobileMenu: React.FC<MobileMenuProps> = ({ className, onClick }) => {
+const MobileMenu: React.FC<MobileMenuProps> = ({ className = '', onClick }) => {
   return (
     <aside className={styles[className]} id={styles['menu-mobile']}>
       <Image
@@ -21,9 +21,17 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ className, onClick }) => {
         width={34}
       />
       <Separator text="MENU" />
-      <ul className={styles['mobile-menu-section']}>{renderMenuOptions()}</ul>
+      <ul
+        className={styles['mobile-menu-section']}
+        data-testid="mobile-menu-list"
+      >
+        {renderMenuOptions()}
+      </ul>
       <Separator text="ACTIONS" />
-      <ul className={styles['mobile-menu-section']}>
+      <ul
+        className={styles['mobile-menu-section']}
+        data-testid="mobile-menu-list"
+      >
         <MenuOption text="CONTACT" />
       </ul>
     </aside>

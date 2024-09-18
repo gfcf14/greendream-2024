@@ -5,7 +5,11 @@ interface SeparatorProps {
 }
 
 const Separator: React.FC<SeparatorProps> = ({ text }) => {
-  return <h6 className={styles.separator}>{text}</h6>;
+  return (
+    <h6 className={styles.separator} data-testid="separator">
+      {text}
+    </h6>
+  );
 };
 
 export default Separator;

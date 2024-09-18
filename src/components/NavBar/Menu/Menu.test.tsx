@@ -2,7 +2,6 @@ import { render, screen } from '@testing-library/react';
 import Menu from '.';
 import { renderMenuOptions } from '@/helpers/renderMenuOptions';
 
-// Mock the renderMenuOptions helper
 jest.mock('@/helpers/renderMenuOptions', () => ({
   renderMenuOptions: jest.fn(),
 }));
