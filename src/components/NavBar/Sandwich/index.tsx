@@ -10,9 +10,9 @@ const Sandwich: React.FC<SandwichProps> = ({ className, onClick }) => {
     <div id={styles.wrapper} onClick={onClick}>
       <div id={styles.container}>
         <div className={styles[className]} id={styles.burger}>
-          <span></span>
-          <span></span>
-          <span></span>
+          <span data-testid="burger-span"></span>
+          <span data-testid="burger-span"></span>
+          <span data-testid="burger-span"></span>
         </div>
       </div>
     </div>
