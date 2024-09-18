@@ -9,8 +9,13 @@ interface MenuOptionProps {
 const MenuOption: React.FC<MenuOptionProps> = ({ link = '', text }) => {
   return (
     <li>
-      <Link className={styles['menu-link']} href={link} passHref>
-        <button className={styles['menu-option']}>
+      <Link
+        className={styles['menu-link']}
+        data-testid="menu-link"
+        href={link}
+        passHref
+      >
+        <button className={styles['menu-option']} data-testid="menu-option">
           <p>{text}</p>
         </button>
       </Link>
