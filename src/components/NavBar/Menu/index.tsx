@@ -7,7 +7,7 @@ const Menu: React.FC = () => {
     <ul id={styles['menu-container']}>
       {renderMenuOptions()}
       <li>
-        <span className={styles.divider}></span>
+        <span role="separator" className={styles.divider}></span>
       </li>
       <li>
         <Button action="contact" type="menu" />
