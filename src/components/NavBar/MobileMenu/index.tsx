@@ -11,7 +11,11 @@ interface MobileMenuProps {
 
 const MobileMenu: React.FC<MobileMenuProps> = ({ className = '', onClick }) => {
   return (
-    <aside className={styles[className]} id={styles['menu-mobile']}>
+    <aside
+      className={styles[className]}
+      data-testid="mobile-menu-aside"
+      id={styles['menu-mobile']}
+    >
       <Image
         alt="Close Mobile Menu"
         id={styles['menu-close-mobile']}

@@ -9,7 +9,11 @@ interface TabletMenuProps {
 
 const TabletMenu: React.FC<TabletMenuProps> = ({ className }) => {
   return (
-    <div className={styles[className]} id={styles['tablet-menu']}>
+    <div
+      className={styles[className]}
+      data-testid="tablet-menu-section"
+      id={styles['tablet-menu']}
+    >
       <Separator text="MENU" />
       <ul
         className={styles['tablet-menu-section']}

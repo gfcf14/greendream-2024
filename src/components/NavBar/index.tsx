@@ -33,7 +33,7 @@ const NavBar: React.FC = () => {
         onClick={closeMobileMenu}
       />
       {isTablet && <TabletMenu className={openClass} />}
-      <nav>
+      <nav role="navigation">
         <div className={styles.container}>
           <Link href="/">
             <Image

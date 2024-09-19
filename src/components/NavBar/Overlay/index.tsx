@@ -9,7 +9,12 @@ interface OverlayProps {
 
 const Overlay: React.FC<OverlayProps> = ({ className, isMobile, onClick }) => {
   return (
-    <div className={styles[className]} id={styles.overlay} onClick={onClick}>
+    <div
+      className={styles[className]}
+      data-testid="overlay"
+      id={styles.overlay}
+      onClick={onClick}
+    >
       {isMobile && (
         <Image
           alt="Single Letter Logo"
