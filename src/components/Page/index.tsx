@@ -10,7 +10,9 @@ const Page: React.FC<PageProps> = ({ children, isHero = false }) => {
   return (
     <>
       <NavBar />
-      <div className={isHero ? '' : styles.page}>{children}</div>
+      <div className={isHero ? '' : styles.page} data-testid="page-content">
+        {children}
+      </div>
     </>
   );
 };
