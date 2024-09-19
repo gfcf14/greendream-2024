@@ -11,9 +11,17 @@ const TabletMenu: React.FC<TabletMenuProps> = ({ className }) => {
   return (
     <div className={styles[className]} id={styles['tablet-menu']}>
       <Separator text="MENU" />
-      <ul className={styles['tablet-menu-section']}>{renderMenuOptions()}</ul>
+      <ul
+        className={styles['tablet-menu-section']}
+        data-testid="tablet-menu-list"
+      >
+        {renderMenuOptions()}
+      </ul>
       <Separator text="ACTIONS" />
-      <ul className={styles['tablet-menu-section']}>
+      <ul
+        className={styles['tablet-menu-section']}
+        data-testid="tablet-menu-list"
+      >
         <MenuOption text="CONTACT" />
       </ul>
     </div>
