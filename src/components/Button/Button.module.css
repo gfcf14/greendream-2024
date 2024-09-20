@@ -1,3 +1,16 @@
+.button-card {
+  background: var(--color-theme-button-primary);
+  border: 0;
+  border-radius: 4px;
+  color: var(--color-white);
+  cursor: pointer;
+  filter: drop-shadow(0 4px 4px var(--color-black-25));
+  font: 16px var(--font-secondary);
+  height: 48px;
+  margin: 0 auto;
+  min-width: 144px;
+  padding: 15px;
+}
 .button-hero {
   background: var(--color-theme-button-primary);
   border: 0;
@@ -10,7 +23,7 @@
   padding: 15px;
   width: 100%;
 }
-.button-hero:hover, .button-hero:focus {
+.button-card:hover, .button-card:focus, .button-hero:hover, .button-hero:focus {
   filter: brightness(1.25);
 }
 
@@ -32,6 +45,10 @@
 }
 
 @media (min-width: 769px) {
+  .button-card {
+    margin: auto 0 auto auto;
+  }
+
   .button-hero {
     font-size: 18px;
     margin: 32px 0 0;

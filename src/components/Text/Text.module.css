@@ -4,6 +4,13 @@
   margin: 0 auto 32px;
 }
 
+.card {
+  color: var(--color-theme-primary-1);
+  font: 600 16px var(--font-primary);
+  margin: 0 auto 24px;
+  text-align: center;
+}
+
 .hero {
   color: var(--color-theme-primary-1);
   filter: drop-shadow(0 4px 4px var(--color-black-30));
@@ -22,6 +29,11 @@
 @media (min-width: 769px) {
   .body {
     font-size: 16px;
+  }
+
+  .card {
+    margin: auto 0;
+    text-align: left;
   }
 
   .hero {

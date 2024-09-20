@@ -1,0 +1,12 @@
+#asset-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 1025px) {
+  #asset-wrapper {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 32px;
+  }
+}

@@ -11,7 +11,7 @@ interface ButtonWithAction {
 interface ButtonWithText {
   action?: never;
   text: string;
-  type: 'hero' | 'primary' | 'secondary';
+  type: 'card' | 'hero' | 'primary' | 'secondary';
 }
 
 type ButtonProps = ButtonWithAction | ButtonWithText;
