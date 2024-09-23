@@ -7,9 +7,13 @@ interface TextProps {
 
 const Text: React.FC<TextProps> = ({ content, type }) => {
   return type === 'title' ? (
-    <h3 className={styles[type]}>{content}</h3>
+    <h3 className={styles[type]} data-testid="text-title">
+      {content}
+    </h3>
   ) : (
-    <p className={styles[type]}>{content}</p>
+    <p className={styles[type]} data-testid="text-body">
+      {content}
+    </p>
   );
 };
 
