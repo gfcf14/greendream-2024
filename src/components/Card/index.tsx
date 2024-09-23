@@ -35,6 +35,7 @@ const Card: React.FC<CardProps> = ({
           <Image
             alt={`container-button`}
             className={styles.button}
+            data-testid="display-toggle"
             height={18}
             onClick={toggleContent}
             src={`/images/${isOpen ? 'contract' : 'expand'}.svg`}
