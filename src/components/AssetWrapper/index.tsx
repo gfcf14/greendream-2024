@@ -5,7 +5,11 @@ interface AssetWrapperProps {
 }
 
 const AssetWrapper: React.FC<AssetWrapperProps> = ({ children }) => {
-  return <div id={styles['asset-wrapper']}>{children}</div>;
+  return (
+    <div data-testid="asset-wrapper" id={styles['asset-wrapper']}>
+      {children}
+    </div>
+  );
 };
 
 export default AssetWrapper;
