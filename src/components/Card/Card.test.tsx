@@ -13,11 +13,9 @@ describe('Card component', () => {
     render(<Card {...cardProps} isMobile />);
 
     expect(screen.getByTestId('display-toggle')).toBeInTheDocument();
-    // TODO: check why src for this Image returns something extra
-    // expect(screen.getByAltText('content-image')).toHaveAttribute(
-    //   'src',
-    //   `/images/${cardProps.icon}`,
-    // );
+    expect(screen.getByAltText('content-image').getAttribute('src')).toContain(
+      encodeURIComponent(cardProps.icon),
+    );
   });
 
   it('ensures the display toggle doesn`t render on non mobile', () => {
