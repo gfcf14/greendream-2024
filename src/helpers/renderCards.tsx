@@ -1,17 +1,12 @@
 import Card from '@/components/Card';
-
-export interface Asset {
-  description: string;
-  icon: string;
-  id: number;
-  name: string;
-}
+import { Asset } from '@/utils/types';
 
 export const renderCards = (assetList: Asset[], isMobile: boolean) => {
   return assetList.map(({ description, icon, id, name }) => {
     return (
       <Card
         description={description}
+        key={id}
         icon={icon}
         id={id}
         isMobile={isMobile}

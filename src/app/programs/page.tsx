@@ -4,8 +4,9 @@ import { useEffect, useState } from 'react';
 import AssetWrapper from '@/components/AssetWrapper';
 import Page from '@/components/Page';
 import Text from '@/components/Text';
+import { renderCards } from '@/helpers/renderCards';
 import useDeviceType from '@/utils/useDeviceType';
-import { Asset, renderCards } from '@/helpers/renderCards';
+import { Asset } from '@/utils/types';
 
 export default function Home() {
   const { isMobile } = useDeviceType();
