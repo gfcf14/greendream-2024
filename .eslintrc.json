@@ -5,6 +5,11 @@
   ],
   "ignorePatterns": ["*.svg"],
   "rules": {
-    "endOfLine": "auto"
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto"
+      }
+    ]
   }
 }
