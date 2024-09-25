@@ -58,9 +58,11 @@ describe('Programs Page', () => {
       expect(fetch).toHaveBeenCalledTimes(1);
     });
 
-    mockProgramsData.forEach((program) => {
-      expect(screen.getByText(program.name)).toBeInTheDocument();
-      expect(screen.getByText(program.description)).toBeInTheDocument();
+    await waitFor(() => {
+      mockProgramsData.forEach((program) => {
+        expect(screen.getByText(program.name)).toBeInTheDocument();
+        expect(screen.getByText(program.description)).toBeInTheDocument();
+      });
     });
   });
 });
