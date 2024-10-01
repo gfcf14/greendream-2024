@@ -6,6 +6,7 @@ const cardProps = {
   icon: 'test-icon.png',
   id: 0,
   name: 'test name',
+  type: 'program',
 };
 
 describe('Card component', () => {

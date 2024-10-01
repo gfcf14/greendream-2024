@@ -1,3 +1,7 @@
+.card-link {
+  margin: auto;
+}
+
 .content-container {
   background: var(--color-super-silver);
   border-radius: 0 0 16px 16px;

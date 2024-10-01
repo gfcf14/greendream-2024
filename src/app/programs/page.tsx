@@ -28,7 +28,9 @@ export default function Home() {
       ) : error ? (
         errorData
       ) : (
-        <AssetWrapper>{renderCards(programs!, isMobile)}</AssetWrapper>
+        <AssetWrapper>
+          {renderCards(programs!, isMobile, 'program')}
+        </AssetWrapper>
       )}
     </Page>
   );

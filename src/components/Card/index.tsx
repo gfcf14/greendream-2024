@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Button from '@/components/Button';
 import Text from '@/components/Text';
 import styles from './Card.module.css';
+import Link from 'next/link';
 
 interface CardProps {
   description: string;
@@ -12,6 +13,7 @@ interface CardProps {
   id: number;
   isMobile: boolean;
   name: string;
+  type: string;
 }
 
 const Card: React.FC<CardProps> = ({
@@ -20,12 +22,16 @@ const Card: React.FC<CardProps> = ({
   id,
   isMobile = false,
   name,
+  type,
 }) => {
   const [isOpen, setOpen] = useState(false);
 
   const toggleContent = () => {
     setOpen(!isOpen);
   };
+
+  const linkType =
+    type == 'program' ? 'programs' : type == 'game' ? 'games' : 'articles';
 
   return (
     <div className={styles.wrapper}>
@@ -54,7 +60,9 @@ const Card: React.FC<CardProps> = ({
           width={80}
         />
         <Text content={description} type="card" />
-        <Button text="VIEW" type="card" />
+        <Link className={styles['card-link']} href={`/${linkType}/${id}`}>
+          <Button text="VIEW" type="card" />
+        </Link>
       </div>
     </div>
   );
