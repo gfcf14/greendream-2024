@@ -26,7 +26,7 @@ describe('NavBar MobileMenu component', () => {
   it('ensures the close image renders successfully', () => {
     const closeImage = screen.getByAltText('Close Mobile Menu');
     expect(closeImage).toBeInTheDocument();
-    expect(closeImage).toHaveAttribute('src', '/images/close.svg');
+    expect(closeImage).toHaveAttribute('src', '/images/icons/close.svg');
   });
 
   it('ensures the separators render', () => {

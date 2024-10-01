@@ -21,7 +21,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ className = '', onClick }) => {
         id={styles['menu-close-mobile']}
         height={34}
         onClick={onClick}
-        src="/images/close.svg"
+        src="/images/icons/close.svg"
         width={34}
       />
       <Separator text="MENU" />

@@ -44,7 +44,7 @@ const Card: React.FC<CardProps> = ({
             data-testid="display-toggle"
             height={18}
             onClick={toggleContent}
-            src={`/images/${isOpen ? 'contract' : 'expand'}.svg`}
+            src={`/images/icons/${isOpen ? 'contract' : 'expand'}.svg`}
             width={18}
           />
         )}
@@ -56,7 +56,7 @@ const Card: React.FC<CardProps> = ({
           alt={`content-image`}
           className={styles.image}
           height={80}
-          src={`/images/${icon}`}
+          src={`/images/logos/${icon}`}
           width={80}
         />
         <Text content={description} type="card" />

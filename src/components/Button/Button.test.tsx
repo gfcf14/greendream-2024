@@ -7,7 +7,7 @@ describe('Button component', () => {
 
     const iconImage = screen.getByAltText('action-contact');
     expect(iconImage).toBeInTheDocument();
-    expect(iconImage).toHaveAttribute('src', '/images/mail.svg');
+    expect(iconImage).toHaveAttribute('src', '/images/icons/mail.svg');
   });
 
   it('renders the content for a hero button', () => {

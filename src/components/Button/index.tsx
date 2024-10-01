@@ -26,7 +26,7 @@ const Button: React.FC<ButtonProps> = ({ action = '', text = '', type }) => {
           alt={`action-${action}`}
           className={styles.icon}
           height={height}
-          src={`/images/${url}`}
+          src={`/images/icons/${url}`}
           width={width}
         />
       ) : (
