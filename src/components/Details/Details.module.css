@@ -1,0 +1,36 @@
+.content {
+  background: var(--color-super-silver);
+  border-radius: 0 0 16px 16px;
+  height: calc(100% - 48px);
+  list-style-type: disc;
+  padding: 24px;
+  width: 100%;
+}
+.content li:not(:last-child) {
+  margin: 0 auto 8px 0;
+}
+
+.detail {
+  color: var(--color-theme-primary-1);
+  font: 16px var(--font-primary);
+}
+
+.title {
+  background: linear-gradient(var(--color-theme-primary-1), var(--color-theme-secondary-1));
+  border-radius: 16px 16px 0 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  width: 100%;
+}
+.title p {
+  color: var(--color-white);
+  font: bold 16px var(--font-secondary);
+  height: 18px;
+}
+
+@media (min-width: 1025px) {
+  .wrapper {
+    width: calc(50% - 16px);
+  }
+}

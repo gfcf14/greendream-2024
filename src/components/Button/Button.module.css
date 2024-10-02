@@ -11,7 +11,7 @@
   min-width: 144px;
   padding: 15px;
 }
-.button-hero {
+.button-hero, .button-primary {
   background: var(--color-theme-button-primary);
   border: 0;
   border-radius: 4px;
@@ -23,7 +23,7 @@
   padding: 15px;
   width: 100%;
 }
-.button-card:hover, .button-card:focus, .button-hero:hover, .button-hero:focus {
+.button-card:hover, .button-card:focus, .button-hero:hover, .button-hero:focus, .button-primary:hover, .button-primary:focus {
   filter: brightness(1.25);
 }
 
@@ -49,11 +49,15 @@
     margin: auto 0 auto auto;
   }
 
-  .button-hero {
+  .button-hero, .button-primary {
     font-size: 18px;
     margin: 32px 0 0;
     padding: 10px 24px;
     width: 352px;
+  }
+  .button-primary {
+    margin: auto;
+    width: fit-content;
   }
 }
 

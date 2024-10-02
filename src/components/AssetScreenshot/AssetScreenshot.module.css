@@ -1,0 +1,23 @@
+#image {
+  background-color: var(--color-super-silver);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  border-radius: 16px;
+  height: 92px;
+  margin: auto;
+  width: 100%;
+}
+
+@media (min-width: 769px) {
+  #image {
+    height: 240.75px;
+  }
+}
+
+@media (min-width: 1025px) {
+  #image {
+    height: 40vh;
+    width: calc(50% - 16px);
+  }
+}

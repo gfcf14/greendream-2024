@@ -9,7 +9,7 @@ import useFetchData from '@/hooks/useFetchData';
 import useDeviceType from '@/utils/useDeviceType';
 import { Asset } from '@/utils/types';
 
-export default function Home() {
+export default function Programs() {
   const { isMobile } = useDeviceType();
   const {
     data: programs,
