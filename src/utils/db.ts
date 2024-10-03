@@ -1,8 +1,9 @@
 import DatabaseConstructor, { Database } from 'better-sqlite3';
+import path from 'path';
 
 const openDb: () => Database = () => {
-  let db: Database = new DatabaseConstructor('greendream.db');
-
+  const dbPath = path.join(process.cwd(), 'private', 'greendream.db');
+  const db: Database = new DatabaseConstructor(dbPath, { readonly: true });
   return db;
 };
 
