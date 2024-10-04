@@ -1,10 +1,10 @@
 'use client';
 
 import { useParams } from 'next/navigation';
+import AssetButton from '@/components/AssetButton';
 import AssetInfo from '@/components/AssetInfo';
 import AssetLogo from '@/components/AssetLogo';
 import AssetScreenshot from '@/components/AssetScreenshot';
-import Button from '@/components/Button';
 import Details from '@/components/Details';
 import Loader from '@/components/Loader';
 import Page from '@/components/Page';
@@ -24,6 +24,8 @@ export default function ProgramDetails() {
 
   const errorData = <p>{error}</p>;
 
+  const isDownload = !program?.link.includes('https://');
+
   return (
     <Page>
       {loading ? (
@@ -39,7 +41,7 @@ export default function ProgramDetails() {
             <AssetScreenshot file={program!.icon} />
             <Details details={program!.details.split(';')} />
           </AssetInfo>
-          <Button text="VIEW" type="primary" />
+          <AssetButton isDownload={isDownload} link={program!.link} />
         </>
       )}
     </Page>

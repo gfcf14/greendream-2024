@@ -4,4 +4,5 @@ export interface Asset {
   icon: string;
   id: number;
   name: string;
+  link: string;
 }
