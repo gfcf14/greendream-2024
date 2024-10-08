@@ -41,7 +41,7 @@ export default function GameDetails() {
             <AssetScreenshot file={game!.icon} />
             <Details details={game!.details.split(';')} />
           </AssetInfo>
-          <AssetButton isDownload={isDownload} link={game!.link} />
+          <AssetButton isDownload={isDownload} isGame link={game!.link} />
         </>
       )}
     </Page>

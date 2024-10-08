@@ -3,10 +3,15 @@ import styles from './AssetButton.module.css';
 
 interface AssetButtonProps {
   isDownload: boolean;
+  isGame?: boolean;
   link: string;
 }
 
-const AssetButton: React.FC<AssetButtonProps> = ({ isDownload, link }) => {
+const AssetButton: React.FC<AssetButtonProps> = ({
+  isDownload,
+  isGame = false,
+  link,
+}) => {
   return (
     <a
       data-testid="asset-button-link"
@@ -15,7 +20,10 @@ const AssetButton: React.FC<AssetButtonProps> = ({ isDownload, link }) => {
       target="_blank"
       download={isDownload ? true : undefined}
     >
-      <Button text={isDownload ? 'DOWNLOAD' : 'VIEW'} type="primary" />
+      <Button
+        text={isDownload ? 'DOWNLOAD' : isGame ? 'PLAY' : 'VIEW'}
+        type="primary"
+      />
     </a>
   );
 };
