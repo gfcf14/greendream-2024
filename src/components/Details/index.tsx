@@ -11,7 +11,7 @@ const Details: React.FC<DetailsProps> = ({ details }) => {
         <p>Details</p>
       </div>
       <ul className={styles.content} data-testid="details-list">
-        {details.map((detail, i) => (
+        {details?.map((detail, i) => (
           <li className={styles.detail} key={`detail-${i}`}>
             {detail}
           </li>

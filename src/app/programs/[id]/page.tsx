@@ -24,7 +24,7 @@ export default function ProgramDetails() {
 
   const errorData = <p>{error}</p>;
 
-  const isDownload = !program?.link.includes('https://');
+  const isDownload = !program?.link?.includes('https://');
 
   return (
     <Page>
@@ -35,11 +35,11 @@ export default function ProgramDetails() {
       ) : (
         <>
           <AssetLogo icon={program!.icon} />
-          <Text content={program!.name.toUpperCase()} type="title" />
+          <Text content={program!.name?.toUpperCase()} type="title" />
           <Text content={program!.description} type="body" />
           <AssetInfo>
             <AssetScreenshot file={program!.icon} />
-            <Details details={program!.details.split(';')} />
+            <Details details={program!.details?.split(';')} />
           </AssetInfo>
           <AssetButton isDownload={isDownload} link={program!.link} />
         </>
