@@ -9,6 +9,10 @@ type MenuOption = {
   text: string;
 };
 
+export const articleCardLineChar = 60;
+export const articleCardLineHeight = 18;
+export const articleCardTitleHPadding = 30;
+
 export const buttonActionIcons: { [key: string]: ButtonActionIcon } = {
   contact: {
     height: 21,

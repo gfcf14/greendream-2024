@@ -1,3 +1,7 @@
+.button {
+  margin: auto 0 auto auto;
+}
+
 .card-link {
   margin: auto;
 }
@@ -22,6 +26,7 @@
 .title-container {
   background: linear-gradient(var(--color-theme-primary-1), var(--color-theme-secondary-1));
   display: flex;
+  gap: 15px;
   justify-content: space-between;
   padding: 15px;
   width: 100%;
@@ -29,7 +34,7 @@
 .title-container p {
   color: var(--color-white);
   font: bold 16px var(--font-secondary);
-  height: 18px;
+  min-height: 18px;
 }
 
 /* .wrapper {

@@ -1,3 +1,10 @@
+export interface Article {
+  description: string;
+  image: string;
+  title: string;
+  url: string;
+}
+
 export interface Asset {
   description: string;
   details: string;

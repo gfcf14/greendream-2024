@@ -10,9 +10,9 @@ const AssetLogo: React.FC<AssetLogoProps> = ({ icon, isCard = false }) => {
   return (
     <Image
       alt={`content-image`}
-      className={`${styles.image} ${isCard ? 'card' : ''}`}
+      className={`${styles.image} ${isCard ? styles.card : ''}`}
       height={80}
-      src={`/images/logos/${icon}`}
+      src={icon.includes('https') ? icon : `/images/logos/${icon}`}
       width={80}
     />
   );
