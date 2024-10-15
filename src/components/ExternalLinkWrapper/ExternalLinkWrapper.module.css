@@ -1,0 +1,36 @@
+.external-link-wrapper {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 32px;  
+  margin: 0 auto;
+  width: 150px;
+}
+
+@media (min-width: 769px) {
+  .professional {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 460px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .creative, .comic {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 612px;
+  }
+
+  .professional {
+    max-width: 1322px;
+    width: 100%;
+  }
+}
+
+@media (min-width: 1320px) {
+  .creative, .comic {
+    width: 100%;
+  }
+}

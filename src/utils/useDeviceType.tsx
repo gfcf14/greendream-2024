@@ -8,6 +8,7 @@ const useDeviceType = () => {
   const isDesktop = width > 1024 && width <= 1440;
   const isLargeDesktop = width > 1440;
   const isTabletOrSmaller = width <= 1024;
+  const isTabletOrLarger = width > 768;
   const isDesktopOrLarger = width > 1024;
 
   return {
@@ -16,6 +17,7 @@ const useDeviceType = () => {
     isDesktop,
     isLargeDesktop,
     isTabletOrSmaller,
+    isTabletOrLarger,
     isDesktopOrLarger,
   };
 };

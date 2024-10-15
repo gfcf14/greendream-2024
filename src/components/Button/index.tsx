@@ -20,7 +20,7 @@ const Button: React.FC<ButtonProps> = ({ action = '', text = '', type }) => {
   const { height, url, width } = buttonActionIcons[action] || {};
 
   return (
-    <button className={styles[`button-${type}`]}>
+    <button className={styles[`button-${type}`]} data-testid="button">
       {action ? (
         <Image
           alt={`action-${action}`}

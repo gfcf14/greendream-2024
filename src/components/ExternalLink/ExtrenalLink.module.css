@@ -1,0 +1,53 @@
+.container {
+  display: flex;
+  gap: 4px;
+  margin: auto 0;
+}
+
+.icon {
+  height: 12px;
+  margin: auto;
+}
+
+.logo {
+  border-radius: 50%;
+  height: 48px;
+  width: 48px;
+}
+
+.wrapper {
+  display: flex;
+  gap: 16px;
+  margin: auto auto auto 0;
+  width: 150px;
+}
+
+@media (min-width: 769px) {
+  .icon {
+    height: 18px;
+  }
+
+  .logo {
+    height: 64px;
+    width: 64px;
+  }
+
+  .wrapper {
+    width: 180px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .icon {
+    height: 24px;
+  }
+
+  .logo {
+    height: 96px;
+    width: 96px;
+  }
+
+  .wrapper {
+    width: 260px;
+  }
+}

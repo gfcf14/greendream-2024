@@ -1,0 +1,42 @@
+.image-container {
+  display: flex;
+  width: calc(50% - 16px);
+}
+.image-container img {
+  margin: auto;
+  max-width: 150px;
+  width: 100%;
+}
+
+.rounded {
+  border-radius: 50%;
+}
+
+.text-container {
+  margin: auto;
+  width: calc(50% - 16px);
+}
+
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+}
+
+@media (min-width: 769px) {
+  .image-container {
+    width: 100%;
+  }
+  .image-container img {
+    max-width: 200px;
+    width: 100%;
+  }
+
+  .text-container {
+    width: 100%;
+  }
+
+  .wrapper {
+    flex-direction: column;
+  }
+}

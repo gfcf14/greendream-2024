@@ -4,6 +4,12 @@ type ButtonActionIcon = {
   width: number;
 };
 
+export type ExternalLink = {
+  logo: string;
+  text: string;
+  url: string;
+};
+
 type MenuOption = {
   link: string;
   text: string;
@@ -37,5 +43,67 @@ export const menuOptions: MenuOption[] = [
   {
     link: '/about',
     text: 'ABOUT',
+  },
+];
+
+export const professionalLinks: ExternalLink[] = [
+  {
+    logo: 'linkedin.png',
+    text: 'LinkedIn',
+    url: 'https://www.linkedin.com/in/carlos-cuba-a2a7b26a/',
+  },
+  {
+    logo: 'github.png',
+    text: 'GitHub',
+    url: 'https://github.com/gfcf14',
+  },
+  {
+    logo: 'medium.png',
+    text: 'Medium',
+    url: 'https://carloscuba014.medium.com/',
+  },
+  {
+    logo: 'codepen.png',
+    text: 'CodePen',
+    url: 'https://codepen.io/gfcf14',
+  },
+];
+export const creativeLinks: ExternalLink[] = [
+  {
+    logo: 'instagram.png',
+    text: 'Instagram',
+    url: 'https://www.instagram.com/gfcf14/',
+  },
+  {
+    logo: 'deviantart.png',
+    text: 'DeviantArt',
+    url: 'https://www.deviantart.com/gfcf14',
+  },
+  {
+    logo: 'x.png',
+    text: 'X',
+    url: 'https://twitter.com/gfcf14',
+  },
+  {
+    logo: 'fanfiction.png',
+    text: 'FanFiction',
+    url: 'https://www.fanfiction.net/u/3545076',
+  },
+];
+export const comicLinks: ExternalLink[] = [
+  {
+    logo: 'instagram.png',
+    text: 'Instagram',
+    url: 'https://www.instagram.com/webdevtoons/',
+  },
+  {
+    logo: 'x.png',
+    text: 'X',
+    url: 'https://twitter.com/webdevtoons',
+  },
+  {
+    logo: 'facebook.png',
+    text: 'Facebook',
+    url: 'https://www.facebook.com/webdevtoons',
   },
 ];

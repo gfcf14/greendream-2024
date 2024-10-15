@@ -2,16 +2,36 @@ import styles from './Text.module.css';
 
 interface TextProps {
   content: string;
-  type: 'body' | 'card' | 'hero' | 'modal' | 'title';
+  contained?: boolean;
+  type:
+    | 'body'
+    | 'card'
+    | 'external-link'
+    | 'hero'
+    | 'highlight'
+    | 'modal'
+    | 'title';
+  white?: boolean;
 }
 
-const Text: React.FC<TextProps> = ({ content, type }) => {
+const Text: React.FC<TextProps> = ({
+  content,
+  contained = false,
+  type,
+  white = false,
+}) => {
   return type === 'title' ? (
-    <h3 className={styles[type]} data-testid="text-title">
+    <h3
+      className={`${styles[type]} ${contained ? styles.contained : ''} ${white ? styles.white : ''}`}
+      data-testid="text-title"
+    >
       {content}
     </h3>
   ) : (
-    <p className={styles[type]} data-testid="text-body">
+    <p
+      className={`${styles[type]} ${contained ? styles.contained : ''} ${white ? styles.white : ''}`}
+      data-testid="text-body"
+    >
       {content}
     </p>
   );
