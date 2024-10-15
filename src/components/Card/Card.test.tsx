@@ -1,4 +1,5 @@
 import { render, screen } from '@testing-library/react';
+import { ViewportProvider } from '@/context/ViewportContext';
 import Card from '.';
 
 const cardProps = {
@@ -11,7 +12,11 @@ const cardProps = {
 
 describe('Card component', () => {
   it('ensures the component renders successfully', () => {
-    render(<Card {...cardProps} isMobile />);
+    render(
+      <ViewportProvider>
+        <Card {...cardProps} isMobile />
+      </ViewportProvider>,
+    );
 
     expect(screen.getByTestId('display-toggle')).toBeInTheDocument();
     expect(screen.getByAltText('content-image').getAttribute('src')).toContain(
@@ -20,7 +25,11 @@ describe('Card component', () => {
   });
 
   it('ensures the display toggle doesn`t render on non mobile', () => {
-    render(<Card {...cardProps} isMobile={false} />);
+    render(
+      <ViewportProvider>
+        <Card {...cardProps} isMobile={false} />
+      </ViewportProvider>,
+    );
 
     expect(screen.queryByTestId('display-toggle')).toBeNull();
   });
