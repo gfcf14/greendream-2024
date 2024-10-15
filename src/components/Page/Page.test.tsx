@@ -2,6 +2,10 @@ import { render, screen } from '@testing-library/react';
 import { ViewportProvider } from '@/context/ViewportContext';
 import Page from '.';
 
+jest.mock('next/navigation', () => ({
+  useRouter: jest.fn(),
+}));
+
 describe('Page component', () => {
   it('renders a non-hero page', () => {
     render(

@@ -7,6 +7,10 @@ jest.mock('@/helpers/renderMenuOptions', () => ({
   renderMenuOptions: jest.fn(),
 }));
 
+jest.mock('next/navigation', () => ({
+  useRouter: jest.fn(),
+}));
+
 const onClick = jest.fn();
 
 describe('NavBar MobileMenu component', () => {

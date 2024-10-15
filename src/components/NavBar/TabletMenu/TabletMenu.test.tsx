@@ -7,6 +7,10 @@ jest.mock('@/helpers/renderMenuOptions', () => ({
   renderMenuOptions: jest.fn(),
 }));
 
+jest.mock('next/navigation', () => ({
+  useRouter: jest.fn(),
+}));
+
 describe('NavBar TabletMenu component', () => {
   beforeEach(() => {
     (renderMenuOptions as jest.Mock).mockClear();

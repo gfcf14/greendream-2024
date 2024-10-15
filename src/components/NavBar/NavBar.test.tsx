@@ -5,6 +5,10 @@ import useDeviceType from '@/utils/useDeviceType';
 // Mock the useDeviceType hook
 jest.mock('@/utils/useDeviceType', () => jest.fn());
 
+jest.mock('next/navigation', () => ({
+  useRouter: jest.fn(),
+}));
+
 describe('NavBar Component', () => {
   const mockUseDeviceType = useDeviceType as jest.Mock;
 

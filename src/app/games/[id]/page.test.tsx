@@ -16,6 +16,7 @@ const mockGameData = [
 
 jest.mock('next/navigation', () => ({
   useParams: jest.fn().mockReturnValue({ id: '1' }),
+  useRouter: jest.fn(),
 }));
 
 describe('Game Details Page', () => {

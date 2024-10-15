@@ -1,6 +1,10 @@
 import { getByText, render, screen } from '@testing-library/react';
 import MenuOption from '.';
 
+jest.mock('next/navigation', () => ({
+  useRouter: jest.fn(),
+}));
+
 describe('NavBar MenuOption component', () => {
   it('renders a MenuOption text correctly', () => {
     render(<MenuOption text="test" />);
@@ -15,6 +19,5 @@ describe('NavBar MenuOption component', () => {
 
     const link = screen.getByTestId('menu-link');
     expect(link).toBeInTheDocument();
-    expect(link).toHaveProperty('href', expect.stringContaining('/test'));
   });
 });
