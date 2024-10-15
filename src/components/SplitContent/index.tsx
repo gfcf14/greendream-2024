@@ -1,4 +1,3 @@
-// eslint-disable @next/next/no-img-element
 import Text from '@/components/Text';
 import styles from './SplitContent.module.css';
 

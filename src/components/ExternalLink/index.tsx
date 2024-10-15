@@ -1,4 +1,3 @@
-// eslint-disable @next/next/no-img-element
 import Link from 'next/link';
 import Text from '@/components/Text';
 import styles from './ExtrenalLink.module.css';

@@ -5,6 +5,7 @@
   ],
   "ignorePatterns": ["*.svg"],
   "rules": {
+    "@next/next/no-img-element": "off",
     "prettier/prettier": [
       "error",
       {
