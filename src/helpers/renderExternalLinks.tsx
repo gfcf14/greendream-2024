@@ -8,13 +8,8 @@ export const renderExternalLinks = (
 ) => {
   return (
     <ExternalLinkWrapper type={type}>
-      {links.map(({ logo, text, url }, i) => (
-        <ExternalLink
-          key={`external-link-${i}`}
-          logo={logo}
-          text={text}
-          url={url}
-        />
+      {links.map((currLink, i) => (
+        <ExternalLink key={`external-link-${i}`} {...currLink} />
       ))}
     </ExternalLinkWrapper>
   );

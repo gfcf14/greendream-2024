@@ -2,6 +2,10 @@ import { render, screen, waitFor } from '@testing-library/react';
 import Programs from '@/app/programs/page';
 import { ViewportProvider } from '@/context/ViewportContext';
 
+jest.mock('next/navigation', () => ({
+  useRouter: jest.fn(),
+}));
+
 describe('Programs Page', () => {
   const mockProgramsData = [
     {

@@ -3,6 +3,7 @@ import Text from '@/components/Text';
 import styles from './SplitContent.module.css';
 
 interface SplitContentProps {
+  boundless?: boolean;
   image: string;
   imageFirst?: boolean;
   rounded?: boolean;
@@ -10,6 +11,7 @@ interface SplitContentProps {
 }
 
 const SplitContent: React.FC<SplitContentProps> = ({
+  boundless = false,
   image,
   imageFirst = false,
   rounded = false,
@@ -25,7 +27,7 @@ const SplitContent: React.FC<SplitContentProps> = ({
     <div className={styles['image-container']}>
       <img
         alt="content-image"
-        className={`${styles.image} ${rounded ? styles.rounded : ''}`}
+        className={`${rounded ? styles.rounded : ''} ${boundless ? styles.boundless : ''}`}
         src={image}
       />
     </div>

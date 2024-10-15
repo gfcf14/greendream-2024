@@ -10,6 +10,10 @@ const cardProps = {
   type: 'program',
 };
 
+jest.mock('next/navigation', () => ({
+  useRouter: jest.fn(),
+}));
+
 describe('Card component', () => {
   it('ensures the component renders successfully', () => {
     render(

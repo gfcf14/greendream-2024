@@ -9,6 +9,7 @@ import SectionWrapper from '@/components/SectionWrapper';
 import SplitContent from '@/components/SplitContent';
 import Text from '@/components/Text';
 import { comicLinks, creativeLinks, professionalLinks } from '@/constants';
+import { downloadFile } from '@/helpers/downloadFile';
 import { renderExternalLinks } from '@/helpers/renderExternalLinks';
 import useDeviceType from '@/utils/useDeviceType';
 
@@ -34,7 +35,14 @@ export default function About() {
             rounded
             text="I have been a developer for well over a decade, and when my job doesn't keep me busy I work on personal projects, such as updating this website."
           />
-          <Button text="DOWNLOAD RESUME" type="primary" />
+          <Button
+            onClick={downloadFile(
+              'Carlos Cuba - Resume.pdf',
+              '/documents/Carlos Cuba - Resume.pdf',
+            )}
+            text="DOWNLOAD RESUME"
+            type="primary"
+          />
         </Section>
       </SectionWrapper>
 
@@ -68,6 +76,7 @@ export default function About() {
         <Section>
           <Text contained content="WEBDEV TOONS" type="title" />
           <SplitContent
+            boundless
             image="/images/comic.png"
             imageFirst={isTabletOrLarger}
             text="This is a comic I update every Monday about Devin Webb (so it reads as Web Dev when putting the surname first), a software developer involved in diverse adventures with friends who may or may not share the same love for technology. If you wish to read it, please follow any of the links below:"

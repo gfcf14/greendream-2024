@@ -2,6 +2,9 @@ import Image from 'next/image';
 import styles from './Button.module.css';
 import { buttonActionIcons } from '@/constants';
 
+interface ButtonCommonProps {
+  onClick: () => void;
+}
 interface ButtonWithAction {
   action: string;
   text?: never;
@@ -14,13 +17,22 @@ interface ButtonWithText {
   type: 'card' | 'hero' | 'primary' | 'secondary';
 }
 
-type ButtonProps = ButtonWithAction | ButtonWithText;
+type ButtonProps = (ButtonWithAction | ButtonWithText) & ButtonCommonProps;
 
-const Button: React.FC<ButtonProps> = ({ action = '', text = '', type }) => {
+const Button: React.FC<ButtonProps> = ({
+  action = '',
+  onClick,
+  text = '',
+  type,
+}) => {
   const { height, url, width } = buttonActionIcons[action] || {};
 
   return (
-    <button className={styles[`button-${type}`]} data-testid="button">
+    <button
+      className={styles[`button-${type}`]}
+      data-testid="button"
+      onClick={onClick}
+    >
       {action ? (
         <Image
           alt={`action-${action}`}

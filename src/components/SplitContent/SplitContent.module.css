@@ -7,7 +7,9 @@
   max-width: 150px;
   width: 100%;
 }
-
+.image-container img.boundless {
+  max-width: 300px;
+}
 .rounded {
   border-radius: 50%;
 }
@@ -31,6 +33,9 @@
     max-width: 200px;
     width: 100%;
   }
+  .image-container img.boundless {
+    max-width: 400px;
+  }
 
   .text-container {
     width: 100%;
@@ -38,5 +43,17 @@
 
   .wrapper {
     flex-direction: column;
+  }
+}
+
+@media (min-width: 1025px) {
+  .image-container img.boundless {
+    max-width: 600px;
+  }
+}
+
+@media (min-width: 1920px) {
+  .image-container img.boundless {
+    max-width: 750px;
   }
 }

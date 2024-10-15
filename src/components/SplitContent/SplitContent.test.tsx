@@ -13,9 +13,10 @@ describe('SplitContent component', () => {
   });
 
   it('renders the component with image attributes successfully', () => {
-    render(<SplitContent image="test.png" rounded text="test" />);
+    render(<SplitContent boundless image="test.png" rounded text="test" />);
 
     expect(screen.getByText(/test/i)).toBeInTheDocument();
+    expect(screen.getByAltText('content-image')).toHaveClass('boundless');
     expect(screen.getByAltText('content-image')).toHaveClass('rounded');
   });
 });

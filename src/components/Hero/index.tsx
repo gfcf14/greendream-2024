@@ -9,6 +9,12 @@ import styles from './Hero.module.css';
 const Hero: React.FC = () => {
   const { isDesktopOrLarger, isTabletOrSmaller } = useDeviceType();
 
+  // TODO: implement the modal for new content
+  const showNewContent = () => null;
+  const whatsNewButton = (
+    <Button onClick={showNewContent} type="hero" text="WHAT'S NEW?" />
+  );
+
   return (
     <div id={styles['hero-wrapper']}>
       <div
@@ -21,9 +27,9 @@ const Hero: React.FC = () => {
             type="hero"
           />
         </div>
-        {isTabletOrSmaller && <Button type="hero" text="WHAT'S NEW?" />}
+        {isTabletOrSmaller && whatsNewButton}
       </div>
-      {isDesktopOrLarger && <Button type="hero" text="WHAT'S NEW?" />}
+      {isDesktopOrLarger && whatsNewButton}
     </div>
   );
 };

@@ -2,6 +2,10 @@ import { render, screen, waitFor } from '@testing-library/react';
 import { ViewportProvider } from '@/context/ViewportContext';
 import Articles from './page';
 
+jest.mock('next/navigation', () => ({
+  useRouter: jest.fn(),
+}));
+
 describe('Articles Page', () => {
   const mockArticlesData = [
     {
