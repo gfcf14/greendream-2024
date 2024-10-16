@@ -1,17 +1,23 @@
 import Card from '@/components/Card';
-import { articleCardLineChar } from '@/constants';
+import {
+  articleCardLineChar,
+  articleCardLineCharLargeDesktop,
+} from '@/constants';
 import { Article } from '@/utils/types';
 
 export const renderArticleCards = (
   articles: Article[],
   isDesktopOrLarger: boolean,
+  isLargeDesktopForCards: boolean,
   isMobile: boolean,
   type: string,
 ) => {
   const lineCount = isDesktopOrLarger
     ? Math.ceil(
         Math.max(...articles.map((currArticle) => currArticle.title.length)) /
-          articleCardLineChar,
+          (isLargeDesktopForCards
+            ? articleCardLineCharLargeDesktop
+            : articleCardLineChar),
       )
     : 1;
 

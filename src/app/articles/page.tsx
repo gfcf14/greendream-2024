@@ -10,7 +10,8 @@ import { Article } from '@/utils/types';
 import useDeviceType from '@/utils/useDeviceType';
 
 export default function Articles() {
-  const { isDesktopOrLarger, isMobile } = useDeviceType();
+  const { isDesktopOrLarger, isLargeDesktopForCards, isMobile } =
+    useDeviceType();
   const {
     data: articles,
     loading,
@@ -32,6 +33,7 @@ export default function Articles() {
           {renderArticleCards(
             articles!,
             isDesktopOrLarger,
+            isLargeDesktopForCards,
             isMobile,
             'article',
           )}

@@ -10,6 +10,7 @@ const useDeviceType = () => {
   const isTabletOrSmaller = width <= 1024;
   const isTabletOrLarger = width > 768;
   const isDesktopOrLarger = width > 1024;
+  const isLargeDesktopForCards = width >= 1065;
 
   return {
     isMobile,
@@ -19,6 +20,7 @@ const useDeviceType = () => {
     isTabletOrSmaller,
     isTabletOrLarger,
     isDesktopOrLarger,
+    isLargeDesktopForCards,
   };
 };
 

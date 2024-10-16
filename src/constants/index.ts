@@ -15,7 +15,8 @@ type MenuOption = {
   text: string;
 };
 
-export const articleCardLineChar = 60;
+export const articleCardLineChar = 45;
+export const articleCardLineCharLargeDesktop = 60;
 export const articleCardLineHeight = 18;
 export const articleCardTitleHPadding = 30;
 
