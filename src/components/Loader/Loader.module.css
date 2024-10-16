@@ -12,9 +12,6 @@
   height: 100px;
   position: relative;
   width: 100px;
-  
-  
-  
 }
 
 .triple-spinner::before,
@@ -22,8 +19,7 @@
   border: 4px solid transparent;
   border-radius: 50%;  
   content: "";
-  position: absolute;
-  
+  position: absolute;  
 }
 .triple-spinner::before {
   -webkit-animation: spin 1.5s linear infinite;

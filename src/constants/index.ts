@@ -46,6 +46,10 @@ export const menuOptions: MenuOption[] = [
   },
 ];
 
+export const alertImages: { [key: string]: string } = {
+  cookie: '/images/icons/cookie.svg',
+};
+
 export const professionalLinks: ExternalLink[] = [
   {
     logo: 'linkedin.png',

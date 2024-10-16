@@ -17,6 +17,12 @@
   font: 600 14px var(--font-primary);
 }
 
+.header {
+  color: var(--color-white);
+  font: 600 14px var(--font-secondary);
+  margin: 0 auto;
+}
+
 .hero {
   color: var(--color-theme-primary-1);
   filter: drop-shadow(0 4px 4px var(--color-black-30));
@@ -28,6 +34,12 @@
   color: var(--color-theme-button-primary);
   font: bold 14px var(--font-primary);
   margin: 0 auto 32px;
+  text-align: center;
+}
+
+.message {
+  color: var(--color-white);
+  font: 12px var(--font-primary);
   text-align: center;
 }
 
@@ -61,7 +73,15 @@
     font-size: 16px;
   }
 
+  .header {
+    font-size: 20px;
+  }
+
   .hero {
+    font-size: 18px;
+  }
+
+  .message {
     font-size: 18px;
   }
 
@@ -81,12 +101,23 @@
     font-size: 24px;
   }
 
+  .header {
+    font-size: 24px;
+    margin: 0 auto 0 0;
+  }
+
   .hero {
     font-size: 24px;
   }
 
   .highlight {
     font-size: 24px;
+  }
+
+  .message {
+    font-size: 24px;
+    margin: 0 auto 0 0;
+    text-align: left;
   }
 
   .title {

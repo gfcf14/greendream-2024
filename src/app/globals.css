@@ -9,9 +9,10 @@
   --color-theme-primary-3: #00b456;
   --color-theme-secondary-1: #002d16;
   --color-theme-secondary-2: #00a899;
+  --color-theme-secondary-3: #00805c;
 
   --color-theme-button-primary: #009479;
-  --color-theme-button-secondary: #00a899;
+  --color-theme-button-secondary: #00bcbb;
 
   /* GENERIC COLORS */
   --color-black: #000000;
@@ -26,6 +27,7 @@
   --color-black-50: #00000080;
   --color-black-100: #00000000;
   --color-gray-50: #80808080;
+  --color-white-25: #ffffff40;
   --color-white-75: #ffffffbf;
 
   /* FONTS */

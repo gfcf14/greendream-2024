@@ -7,12 +7,16 @@ interface TextProps {
     | 'body'
     | 'card'
     | 'external-link'
+    | 'header'
     | 'hero'
     | 'highlight'
+    | 'message'
     | 'modal'
     | 'title';
   white?: boolean;
 }
+
+const headerTypes = ['header', 'title'];
 
 const Text: React.FC<TextProps> = ({
   content,
@@ -20,7 +24,7 @@ const Text: React.FC<TextProps> = ({
   type,
   white = false,
 }) => {
-  return type === 'title' ? (
+  return headerTypes.includes(type) ? (
     <h3
       className={`${styles[type]} ${contained ? styles.contained : ''} ${white ? styles.white : ''}`}
       data-testid="text-title"

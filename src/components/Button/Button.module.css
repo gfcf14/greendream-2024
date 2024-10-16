@@ -11,7 +11,7 @@
   min-width: 144px;
   padding: 15px;
 }
-.button-hero, .button-primary {
+.button-hero, .button-primary, .button-secondary {
   background: var(--color-theme-button-primary);
   border: 0;
   border-radius: 4px;
@@ -23,8 +23,16 @@
   padding: 15px;
   width: 100%;
 }
-.button-card:hover, .button-card:focus, .button-hero:hover, .button-hero:focus, .button-primary:hover, .button-primary:focus {
+.button-card:hover, .button-card:focus, .button-hero:hover, .button-hero:focus, .button-primary:hover, .button-primary:focus, .button-secondary:hover, .button-secondary:focus {
   filter: brightness(1.25);
+}
+.button-secondary {
+  background: var(--color-theme-button-secondary);
+}
+
+.button-primary.contained, .button-secondary.contained {
+  height: 48px;
+  min-width: 124px;
 }
 
 .button-menu {
@@ -49,15 +57,19 @@
     margin: auto 0 auto auto;
   }
 
-  .button-hero, .button-primary {
+  .button-hero, .button-primary, .button-secondary {
     font-size: 18px;
     margin: 32px 0 0;
     padding: 10px 24px;
     width: 352px;
   }
-  .button-primary {
+  .button-primary, .button-secondary {
     margin: auto;
     width: fit-content;
+  }
+
+  .button-primary.contained, .button-secondary.contained {
+    min-width: 192px;
   }
 }
 
@@ -67,6 +79,10 @@
     margin: 24px auto 0;
     padding: 12px;
     width: 55.55vw;
+  }
+
+  .button-primary.contained, .button-secondary.contained {
+    height: 56px;
   }
 }
 

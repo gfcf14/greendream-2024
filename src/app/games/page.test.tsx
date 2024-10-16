@@ -28,10 +28,12 @@ describe('Games Page', () => {
         json: () => Promise.resolve(mockGamesData),
       }),
     ) as jest.Mock;
+    document.cookie = 'allow-cookies=accept';
   });
 
   afterEach(() => {
     jest.clearAllMocks();
+    document.cookie = '';
   });
 
   it('renders the games title and description correctly', async () => {

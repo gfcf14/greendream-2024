@@ -3,6 +3,7 @@ import styles from './Button.module.css';
 import { buttonActionIcons } from '@/constants';
 
 interface ButtonCommonProps {
+  contained?: boolean;
   onClick: () => void;
 }
 interface ButtonWithAction {
@@ -21,6 +22,7 @@ type ButtonProps = (ButtonWithAction | ButtonWithText) & ButtonCommonProps;
 
 const Button: React.FC<ButtonProps> = ({
   action = '',
+  contained = false,
   onClick,
   text = '',
   type,
@@ -29,7 +31,7 @@ const Button: React.FC<ButtonProps> = ({
 
   return (
     <button
-      className={styles[`button-${type}`]}
+      className={`${styles[`button-${type}`]} ${contained ? styles.contained : ''}`}
       data-testid="button"
       onClick={onClick}
     >

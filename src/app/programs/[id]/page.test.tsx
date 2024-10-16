@@ -26,10 +26,12 @@ describe('Program Details Page', () => {
         json: () => Promise.resolve(mockProgramData[0]),
       }),
     ) as jest.Mock;
+    document.cookie = 'allow-cookies=accept';
   });
 
   afterEach(() => {
     jest.clearAllMocks();
+    document.cookie = '';
   });
 
   it('renders the program title, description, and details correctly', async () => {
