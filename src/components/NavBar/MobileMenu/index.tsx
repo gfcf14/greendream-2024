@@ -6,15 +6,21 @@ import styles from './MobileMenu.module.css';
 
 interface MobileMenuProps {
   className?: string;
+  menuOpacity: number;
   onClick: () => void;
 }
 
-const MobileMenu: React.FC<MobileMenuProps> = ({ className = '', onClick }) => {
+const MobileMenu: React.FC<MobileMenuProps> = ({
+  className = '',
+  menuOpacity,
+  onClick,
+}) => {
   return (
     <aside
       className={styles[className]}
       data-testid="mobile-menu-aside"
       id={styles['menu-mobile']}
+      style={{ opacity: menuOpacity }}
     >
       <Image
         alt="Close Mobile Menu"

@@ -15,14 +15,17 @@ const NavBar: React.FC = () => {
   const { isDesktopOrLarger, isMobile, isTablet, isTabletOrSmaller } =
     useDeviceType();
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [menuOpacity, setMenuOpacity] = useState(0);
   const openClass = isMobileMenuOpen ? 'open' : '';
 
   const openMobileMenu = () => {
+    setMenuOpacity(1);
     setMobileMenuOpen(true);
   };
 
   const closeMobileMenu = () => {
     setMobileMenuOpen(false);
+    setTimeout(() => setMenuOpacity(0), 300);
   };
 
   return (
@@ -32,7 +35,9 @@ const NavBar: React.FC = () => {
         isMobile={isMobile}
         onClick={closeMobileMenu}
       />
-      {isTablet && <TabletMenu className={openClass} />}
+      {isTablet && (
+        <TabletMenu className={openClass} menuOpacity={menuOpacity} />
+      )}
       <nav role="navigation">
         <div className={styles.container}>
           <Link href="/">
@@ -52,8 +57,12 @@ const NavBar: React.FC = () => {
             />
           )}
         </div>
-        {isMobile && isMobileMenuOpen && (
-          <MobileMenu className={openClass} onClick={closeMobileMenu} />
+        {isMobile && (
+          <MobileMenu
+            className={openClass}
+            menuOpacity={menuOpacity}
+            onClick={closeMobileMenu}
+          />
         )}
       </nav>
     </>

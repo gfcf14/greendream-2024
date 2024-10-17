@@ -5,14 +5,16 @@ import styles from './TabletMenu.module.css';
 
 interface TabletMenuProps {
   className: string;
+  menuOpacity: number;
 }
 
-const TabletMenu: React.FC<TabletMenuProps> = ({ className }) => {
+const TabletMenu: React.FC<TabletMenuProps> = ({ className, menuOpacity }) => {
   return (
     <div
       className={styles[className]}
       data-testid="tablet-menu-section"
       id={styles['tablet-menu']}
+      style={{ opacity: menuOpacity }}
     >
       <Separator text="MENU" />
       <ul
