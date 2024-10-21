@@ -11,12 +11,23 @@ jest.mock('next/navigation', () => ({
   useRouter: jest.fn(),
 }));
 
+const menuActions = {
+  contact: jest.fn(),
+};
+
 const onClick = jest.fn();
 
 describe('NavBar MobileMenu component', () => {
   beforeEach(() => {
     (renderMenuOptions as jest.Mock).mockClear();
-    render(<MobileMenu onClick={onClick} />);
+    render(
+      <MobileMenu
+        isOpen
+        menuActions={menuActions}
+        menuOpacity={1}
+        onClick={onClick}
+      />,
+    );
   });
 
   it('ensures renderMenuOptions gets called', () => {

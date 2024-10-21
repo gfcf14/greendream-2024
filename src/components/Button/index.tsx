@@ -3,7 +3,9 @@ import styles from './Button.module.css';
 import { buttonActionIcons } from '@/constants';
 
 interface ButtonCommonProps {
+  boundless?: boolean;
   contained?: boolean;
+  disabled?: boolean;
   onClick: () => void;
 }
 interface ButtonWithAction {
@@ -22,7 +24,9 @@ type ButtonProps = (ButtonWithAction | ButtonWithText) & ButtonCommonProps;
 
 const Button: React.FC<ButtonProps> = ({
   action = '',
+  boundless = false,
   contained = false,
+  disabled = false,
   onClick,
   text = '',
   type,
@@ -31,9 +35,10 @@ const Button: React.FC<ButtonProps> = ({
 
   return (
     <button
-      className={`${styles[`button-${type}`]} ${contained ? styles.contained : ''}`}
+      className={`${styles[`button-${type}`]} ${boundless ? styles.boundless : ''} ${contained ? styles.contained : ''} ${disabled ? styles.disabled : ''}`}
       data-testid="button"
       onClick={onClick}
+      disabled={disabled}
     >
       {action ? (
         <Image

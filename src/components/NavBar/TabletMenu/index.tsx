@@ -1,17 +1,41 @@
 import Separator from '@/components/Separator';
+import { menuActionsList } from '@/constants';
 import { renderMenuOptions } from '@/helpers/renderMenuOptions';
 import MenuOption from '../MenuOption';
 import styles from './TabletMenu.module.css';
 
 interface TabletMenuProps {
-  className: string;
+  isOpen: boolean;
+  menuActions: {
+    contact: () => void;
+  };
   menuOpacity: number;
 }
 
-const TabletMenu: React.FC<TabletMenuProps> = ({ className, menuOpacity }) => {
+const TabletMenu: React.FC<TabletMenuProps> = ({
+  isOpen,
+  menuActions,
+  menuOpacity,
+}) => {
+  const renderMenuActions = () => {
+    return (
+      <ul
+        className={styles['tablet-menu-section']}
+        data-testid="tablet-menu-list"
+      >
+        {menuActionsList.map((action) => (
+          <MenuOption
+            text={action.toUpperCase()}
+            onClick={menuActions[action as keyof typeof menuActions]}
+          />
+        ))}
+      </ul>
+    );
+  };
+
   return (
     <div
-      className={styles[className]}
+      className={`${isOpen ? styles.open : ''}`}
       data-testid="tablet-menu-section"
       id={styles['tablet-menu']}
       style={{ opacity: menuOpacity }}
@@ -24,12 +48,7 @@ const TabletMenu: React.FC<TabletMenuProps> = ({ className, menuOpacity }) => {
         {renderMenuOptions()}
       </ul>
       <Separator text="ACTIONS" />
-      <ul
-        className={styles['tablet-menu-section']}
-        data-testid="tablet-menu-list"
-      >
-        <MenuOption text="CONTACT" />
-      </ul>
+      {renderMenuActions()}
     </div>
   );
 };

@@ -15,6 +15,10 @@ type MenuOption = {
   text: string;
 };
 
+export const alertImages: { [key: string]: string } = {
+  cookie: '/images/icons/cookie.svg',
+};
+
 export const articleCardLineChar = 45;
 export const articleCardLineCharLargeDesktop = 60;
 export const articleCardLineHeight = 18;
@@ -28,51 +32,24 @@ export const buttonActionIcons: { [key: string]: ButtonActionIcon } = {
   },
 };
 
-export const menuOptions: MenuOption[] = [
+export const comicLinks: ExternalLink[] = [
   {
-    link: '/programs',
-    text: 'PROGRAMS',
+    logo: 'instagram.png',
+    text: 'Instagram',
+    url: 'https://www.instagram.com/webdevtoons/',
   },
   {
-    link: '/games',
-    text: 'GAMES',
+    logo: 'x.png',
+    text: 'X',
+    url: 'https://twitter.com/webdevtoons',
   },
   {
-    link: '/articles',
-    text: 'ARTICLES',
-  },
-  {
-    link: '/about',
-    text: 'ABOUT',
+    logo: 'facebook.png',
+    text: 'Facebook',
+    url: 'https://www.facebook.com/webdevtoons',
   },
 ];
 
-export const alertImages: { [key: string]: string } = {
-  cookie: '/images/icons/cookie.svg',
-};
-
-export const professionalLinks: ExternalLink[] = [
-  {
-    logo: 'linkedin.png',
-    text: 'LinkedIn',
-    url: 'https://www.linkedin.com/in/carlos-cuba-a2a7b26a/',
-  },
-  {
-    logo: 'github.png',
-    text: 'GitHub',
-    url: 'https://github.com/gfcf14',
-  },
-  {
-    logo: 'medium.png',
-    text: 'Medium',
-    url: 'https://carloscuba014.medium.com/',
-  },
-  {
-    logo: 'codepen.png',
-    text: 'CodePen',
-    url: 'https://codepen.io/gfcf14',
-  },
-];
 export const creativeLinks: ExternalLink[] = [
   {
     logo: 'instagram.png',
@@ -95,20 +72,55 @@ export const creativeLinks: ExternalLink[] = [
     url: 'https://www.fanfiction.net/u/3545076',
   },
 ];
-export const comicLinks: ExternalLink[] = [
+
+export const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+export const inputIcons: { [key: string]: string } = {
+  email: 'email.svg',
+  message: 'message.svg',
+  name: 'name.svg',
+};
+
+export const menuActionsList = ['contact'];
+
+export const menuOptions: MenuOption[] = [
   {
-    logo: 'instagram.png',
-    text: 'Instagram',
-    url: 'https://www.instagram.com/webdevtoons/',
+    link: '/programs',
+    text: 'PROGRAMS',
   },
   {
-    logo: 'x.png',
-    text: 'X',
-    url: 'https://twitter.com/webdevtoons',
+    link: '/games',
+    text: 'GAMES',
   },
   {
-    logo: 'facebook.png',
-    text: 'Facebook',
-    url: 'https://www.facebook.com/webdevtoons',
+    link: '/articles',
+    text: 'ARTICLES',
+  },
+  {
+    link: '/about',
+    text: 'ABOUT',
+  },
+];
+
+export const professionalLinks: ExternalLink[] = [
+  {
+    logo: 'linkedin.png',
+    text: 'LinkedIn',
+    url: 'https://www.linkedin.com/in/carlos-cuba-a2a7b26a/',
+  },
+  {
+    logo: 'github.png',
+    text: 'GitHub',
+    url: 'https://github.com/gfcf14',
+  },
+  {
+    logo: 'medium.png',
+    text: 'Medium',
+    url: 'https://carloscuba014.medium.com/',
+  },
+  {
+    logo: 'codepen.png',
+    text: 'CodePen',
+    url: 'https://codepen.io/gfcf14',
   },
 ];

@@ -11,10 +11,14 @@ jest.mock('next/navigation', () => ({
   useRouter: jest.fn(),
 }));
 
+const menuActions = {
+  contact: jest.fn(),
+};
+
 describe('NavBar TabletMenu component', () => {
   beforeEach(() => {
     (renderMenuOptions as jest.Mock).mockClear();
-    render(<TabletMenu className="open" />);
+    render(<TabletMenu isOpen menuActions={menuActions} menuOpacity={1} />);
   });
 
   it('ensures renderMenuOptions gets called', () => {

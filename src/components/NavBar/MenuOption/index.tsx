@@ -5,10 +5,15 @@ import { useNavigation } from '@/hooks/useNavigation';
 
 interface MenuOptionProps {
   link?: string;
+  onClick?: () => void;
   text: string;
 }
 
-const MenuOption: React.FC<MenuOptionProps> = ({ link = '', text }) => {
+const MenuOption: React.FC<MenuOptionProps> = ({
+  link = '',
+  onClick = null,
+  text,
+}) => {
   const { navigate } = useNavigation();
   return (
     <li>
@@ -16,7 +21,7 @@ const MenuOption: React.FC<MenuOptionProps> = ({ link = '', text }) => {
         <button
           className={styles['menu-option']}
           data-testid="menu-option"
-          onClick={navigate(link)}
+          onClick={onClick ? onClick : navigate(link)}
         >
           <p>{text}</p>
         </button>

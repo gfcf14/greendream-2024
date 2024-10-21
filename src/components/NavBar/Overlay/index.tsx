@@ -2,15 +2,15 @@ import Image from 'next/image';
 import styles from './Overlay.module.css';
 
 interface OverlayProps {
-  className: string;
   isMobile: boolean;
+  isOpen: boolean;
   onClick: () => void;
 }
 
-const Overlay: React.FC<OverlayProps> = ({ className, isMobile, onClick }) => {
+const Overlay: React.FC<OverlayProps> = ({ isMobile, isOpen, onClick }) => {
   return (
     <div
-      className={styles[className]}
+      className={`${isOpen ? styles.open : ''}`}
       data-testid="overlay"
       id={styles.overlay}
       onClick={onClick}
@@ -18,7 +18,7 @@ const Overlay: React.FC<OverlayProps> = ({ className, isMobile, onClick }) => {
       {isMobile && (
         <Image
           alt="Single Letter Logo"
-          className={styles[className]}
+          className={`${isOpen ? styles.open : ''}`}
           height={46}
           id={styles['logo-single-letter']}
           src="/images/logo-single-letter.svg"

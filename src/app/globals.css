@@ -11,8 +11,12 @@
   --color-theme-secondary-2: #00a899;
   --color-theme-secondary-3: #00805c;
 
+  --color-theme-disabled: #6e948d;
+
   --color-theme-button-primary: #009479;
   --color-theme-button-secondary: #00bcbb;
+  --color-theme-button-disabled: #6e948d;
+  --color-theme-button-warning: #e92d2d;
 
   /* GENERIC COLORS */
   --color-black: #000000;

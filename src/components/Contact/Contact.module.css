@@ -1,0 +1,11 @@
+.contact-form-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+@media (min-width: 769px) {
+  .contact-form-wrapper {
+    gap: 32px;
+  }
+}

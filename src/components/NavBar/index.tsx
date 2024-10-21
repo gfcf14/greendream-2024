@@ -3,20 +3,22 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import styles from './NavBar.module.css';
+import Contact from '@/components/Contact';
+import Modal from '@/components/Modal';
 import useDeviceType from '@/utils/useDeviceType';
-import Overlay from './Overlay';
 import Menu from './Menu';
-import Sandwich from './Sandwich';
 import MobileMenu from './MobileMenu';
+import Overlay from './Overlay';
+import Sandwich from './Sandwich';
 import TabletMenu from './TabletMenu';
+import styles from './NavBar.module.css';
 
 const NavBar: React.FC = () => {
   const { isDesktopOrLarger, isMobile, isTablet, isTabletOrSmaller } =
     useDeviceType();
+  const [isContactFormOpen, setContactFormOpen] = useState(false);
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [menuOpacity, setMenuOpacity] = useState(0);
-  const openClass = isMobileMenuOpen ? 'open' : '';
 
   const openMobileMenu = () => {
     setMenuOpacity(1);
@@ -28,15 +30,47 @@ const NavBar: React.FC = () => {
     setTimeout(() => setMenuOpacity(0), 300);
   };
 
+  const openContactForm = () => {
+    if (isMobileMenuOpen) {
+      closeMobileMenu();
+    }
+    setContactFormOpen(true);
+  };
+
+  const closeContactForm = () => {
+    setContactFormOpen(false);
+  };
+
+  const handleClose = () => {
+    closeContactForm();
+    closeMobileMenu();
+  };
+
+  const menuActions = {
+    contact: openContactForm,
+  };
+
   return (
     <>
       <Overlay
-        className={openClass}
         isMobile={isMobile}
-        onClick={closeMobileMenu}
+        isOpen={isMobileMenuOpen || isContactFormOpen}
+        onClick={handleClose}
       />
+      <Modal
+        description="Please fill out all the fields."
+        isOpen={isContactFormOpen}
+        onClose={closeContactForm}
+        title="CONTACT ME"
+      >
+        <Contact onSubmit={closeContactForm} />
+      </Modal>
       {isTablet && (
-        <TabletMenu className={openClass} menuOpacity={menuOpacity} />
+        <TabletMenu
+          isOpen={isMobileMenuOpen}
+          menuActions={menuActions}
+          menuOpacity={menuOpacity}
+        />
       )}
       <nav role="navigation">
         <div className={styles.container}>
@@ -49,17 +83,18 @@ const NavBar: React.FC = () => {
               width={162}
             />
           </Link>
-          {isDesktopOrLarger && <Menu />}
+          {isDesktopOrLarger && <Menu menuActions={menuActions} />}
           {isTabletOrSmaller && (
             <Sandwich
-              className={openClass}
+              isOpen={isMobileMenuOpen}
               onClick={isMobileMenuOpen ? closeMobileMenu : openMobileMenu}
             />
           )}
         </div>
         {isMobile && (
           <MobileMenu
-            className={openClass}
+            isOpen={isMobileMenuOpen}
+            menuActions={menuActions}
             menuOpacity={menuOpacity}
             onClick={closeMobileMenu}
           />

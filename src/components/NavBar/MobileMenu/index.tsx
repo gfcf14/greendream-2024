@@ -1,23 +1,44 @@
 import Image from 'next/image';
 import Separator from '@/components/Separator';
+import { menuActionsList } from '@/constants';
 import { renderMenuOptions } from '@/helpers/renderMenuOptions';
 import MenuOption from '../MenuOption';
 import styles from './MobileMenu.module.css';
 
 interface MobileMenuProps {
-  className?: string;
+  isOpen: boolean;
+  menuActions: {
+    contact: () => void;
+  };
   menuOpacity: number;
   onClick: () => void;
 }
 
 const MobileMenu: React.FC<MobileMenuProps> = ({
-  className = '',
+  isOpen,
+  menuActions,
   menuOpacity,
   onClick,
 }) => {
+  const renderMenuActions = () => {
+    return (
+      <ul
+        className={styles['mobile-menu-section']}
+        data-testid="mobile-menu-list"
+      >
+        {menuActionsList.map((action) => (
+          <MenuOption
+            text={action.toUpperCase()}
+            onClick={menuActions[action as keyof typeof menuActions]}
+          />
+        ))}
+      </ul>
+    );
+  };
+
   return (
     <aside
-      className={styles[className]}
+      className={`${isOpen ? styles.open : ''}`}
       data-testid="mobile-menu-aside"
       id={styles['menu-mobile']}
       style={{ opacity: menuOpacity }}
@@ -38,12 +59,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
         {renderMenuOptions()}
       </ul>
       <Separator text="ACTIONS" />
-      <ul
-        className={styles['mobile-menu-section']}
-        data-testid="mobile-menu-list"
-      >
-        <MenuOption text="CONTACT" />
-      </ul>
+      {renderMenuActions()}
     </aside>
   );
 };

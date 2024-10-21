@@ -48,6 +48,10 @@
   filter: brightness(1.5);
 }
 
+.disabled {
+  background: var(--color-theme-button-disabled);
+}
+
 .icon {
   margin: auto;
 }
@@ -68,6 +72,9 @@
     width: fit-content;
   }
 
+  .button-primary.boundless, .button-secondary.boundless {
+    width: 100%;
+  }
   .button-primary.contained, .button-secondary.contained {
     min-width: 192px;
   }
