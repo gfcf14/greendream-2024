@@ -79,10 +79,32 @@ const Contact: React.FC<ContactProps> = ({ onSubmit }) => {
     (field) => field.status === 'valid',
   );
 
-  const submit = () => {
-    // TODO: implement submit to send email
-    console.log(formState);
-    onSubmit();
+  const submit = async () => {
+    const { email, message, name } = formState;
+
+    try {
+      const response = await fetch('/api/send', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email: email.value,
+          message: message.value,
+          name: name.value,
+        }),
+      });
+
+      if (response.ok) {
+        alert('Email sent successfully!');
+      } else {
+        const errorData = await response.json();
+        alert(`Failed to send email: ${errorData.error}`);
+      }
+
+      onSubmit();
+    } catch (error) {
+      console.error('Error:', error);
+      alert('An error occurred while sending the email.');
+    }
   };
 
   return (

@@ -102,6 +102,9 @@ export const menuOptions: MenuOption[] = [
   },
 ];
 
+export const nodeMailerUser = process.env.EMAIL_USER;
+export const nodeMailerReceiver = process.env.EMAIL_RECEIVER;
+
 export const professionalLinks: ExternalLink[] = [
   {
     logo: 'linkedin.png',
