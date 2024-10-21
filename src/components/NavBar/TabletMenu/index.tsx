@@ -23,8 +23,9 @@ const TabletMenu: React.FC<TabletMenuProps> = ({
         className={styles['tablet-menu-section']}
         data-testid="tablet-menu-list"
       >
-        {menuActionsList.map((action) => (
+        {menuActionsList.map((action, i) => (
           <MenuOption
+            key={`action-${i}`}
             text={action.toUpperCase()}
             onClick={menuActions[action as keyof typeof menuActions]}
           />

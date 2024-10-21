@@ -11,8 +11,8 @@ interface MenuProps {
 
 const Menu: React.FC<MenuProps> = ({ menuActions }) => {
   const renderMenuActions = () => {
-    return menuActionsList.map((action) => (
-      <li>
+    return menuActionsList.map((action, i) => (
+      <li key={`action-${i}`}>
         <Button
           action={action}
           onClick={menuActions[action as keyof typeof menuActions]}

@@ -26,8 +26,9 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
         className={styles['mobile-menu-section']}
         data-testid="mobile-menu-list"
       >
-        {menuActionsList.map((action) => (
+        {menuActionsList.map((action, i) => (
           <MenuOption
+            key={`action-${i}`}
             text={action.toUpperCase()}
             onClick={menuActions[action as keyof typeof menuActions]}
           />
