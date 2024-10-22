@@ -3,6 +3,9 @@
   flex-direction: column;
   gap: 16px;
 }
+.contact-form-wrapper.sending {
+  visibility: hidden;
+}
 
 @media (min-width: 769px) {
   .contact-form-wrapper {

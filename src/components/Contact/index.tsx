@@ -1,6 +1,7 @@
 import { ChangeEvent, useState } from 'react';
 import Button from '@/components/Button';
 import Input from '@/components/Input';
+import Loader from '@/components/Loader';
 import TextArea from '@/components/TextArea';
 import { emailRegex } from '@/constants';
 import styles from './Contact.module.css';
@@ -42,6 +43,7 @@ const initialFormState = {
 
 const Contact: React.FC<ContactProps> = ({ onSubmit }) => {
   const [formState, setFormState] = useState<ContactState>(initialFormState);
+  const [isSending, setSending] = useState(false);
 
   const validateField = (name: string, value: string) => {
     switch (name) {
@@ -80,6 +82,7 @@ const Contact: React.FC<ContactProps> = ({ onSubmit }) => {
   );
 
   const submit = async () => {
+    setSending(true);
     const { email, message, name } = formState;
 
     try {
@@ -100,48 +103,56 @@ const Contact: React.FC<ContactProps> = ({ onSubmit }) => {
         alert(`Failed to send email: ${errorData.error}`);
       }
 
+      setFormState(initialFormState);
       onSubmit();
     } catch (error) {
       console.error('Error:', error);
       alert('An error occurred while sending the email.');
+    } finally {
+      setSending(false);
     }
   };
 
   return (
-    <div className={styles['contact-form-wrapper']}>
-      <Input
-        image="name"
-        name="name"
-        onChange={handleFieldChange}
-        placeholder="Your Name"
-        status={formState.name.status}
-        value={formState.name.value}
-      />
-      <Input
-        image="email"
-        name="email"
-        onChange={handleFieldChange}
-        placeholder="Your Email"
-        status={formState.email.status}
-        value={formState.email.value}
-      />
-      <TextArea
-        image="message"
-        name="message"
-        onChange={handleFieldChange}
-        placeholder="Your Message"
-        status={formState.message.status}
-        value={formState.message.value}
-      />
-      <Button
-        boundless
-        contained
-        disabled={formDisabled}
-        onClick={submit}
-        text="SEND"
-        type="primary"
-      />
-    </div>
+    <>
+      {isSending && <Loader isModal />}
+      <div
+        className={`${styles['contact-form-wrapper']} ${isSending ? styles.sending : ''}`}
+      >
+        <Input
+          image="name"
+          name="name"
+          onChange={handleFieldChange}
+          placeholder="Your Name"
+          status={formState.name.status}
+          value={formState.name.value}
+        />
+        <Input
+          image="email"
+          name="email"
+          onChange={handleFieldChange}
+          placeholder="Your Email"
+          status={formState.email.status}
+          value={formState.email.value}
+        />
+        <TextArea
+          image="message"
+          name="message"
+          onChange={handleFieldChange}
+          placeholder="Your Message"
+          status={formState.message.status}
+          value={formState.message.value}
+        />
+        <Button
+          boundless
+          contained
+          disabled={formDisabled}
+          onClick={submit}
+          text="SEND"
+          type="primary"
+        />
+      </div>
+    </>
   );
 };
 
