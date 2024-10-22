@@ -22,3 +22,6 @@
   background: var(--color-black-50);
   pointer-events: auto;
 }
+#overlay.modal {
+  z-index: 5;
+}

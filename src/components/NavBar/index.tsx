@@ -54,6 +54,7 @@ const NavBar: React.FC = () => {
     <>
       <Overlay
         isMobile={isMobile}
+        isModal={isContactFormOpen}
         isOpen={isMobileMenuOpen || isContactFormOpen}
         onClick={handleClose}
       />

@@ -3,14 +3,20 @@ import styles from './Overlay.module.css';
 
 interface OverlayProps {
   isMobile: boolean;
+  isModal: boolean;
   isOpen: boolean;
   onClick: () => void;
 }
 
-const Overlay: React.FC<OverlayProps> = ({ isMobile, isOpen, onClick }) => {
+const Overlay: React.FC<OverlayProps> = ({
+  isMobile,
+  isModal,
+  isOpen,
+  onClick,
+}) => {
   return (
     <div
-      className={`${isOpen ? styles.open : ''}`}
+      className={`${isOpen ? styles.open : ''} ${isModal ? styles.modal : ''}`}
       data-testid="overlay"
       id={styles.overlay}
       onClick={onClick}
