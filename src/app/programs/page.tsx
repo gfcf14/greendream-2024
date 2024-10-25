@@ -20,18 +20,21 @@ export default function Programs() {
   const errorData = <p>{error}</p>;
 
   return (
-    <Page>
-      <Text content="PROGRAMS" type="title" />
-      <Text content="These are the programs I have developed" type="body" />
-      {loading ? (
-        <Loader />
-      ) : error ? (
-        errorData
-      ) : (
-        <AssetWrapper>
-          {renderCards(programs!, isMobile, 'program')}
-        </AssetWrapper>
-      )}
-    </Page>
+    <>
+      <title>GreenDream: Programs</title>
+      <Page>
+        <Text content="PROGRAMS" type="title" />
+        <Text content="These are the programs I have developed" type="body" />
+        {loading ? (
+          <Loader />
+        ) : error ? (
+          errorData
+        ) : (
+          <AssetWrapper>
+            {renderCards(programs!, isMobile, 'program')}
+          </AssetWrapper>
+        )}
+      </Page>
+    </>
   );
 }

@@ -6,10 +6,6 @@ import { ViewportProvider } from '@/contexts/ViewportContext';
 
 const inter = Inter({ subsets: ['latin'] });
 
-export const metadata: Metadata = {
-  title: 'GreenDream',
-};
-
 export default function RootLayout({
   children,
 }: Readonly<{

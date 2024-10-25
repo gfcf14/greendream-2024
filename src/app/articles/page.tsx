@@ -21,24 +21,27 @@ export default function Articles() {
   const errorData = <p>{error}</p>;
 
   return (
-    <Page>
-      <Text content="ARTICLES" type="title" />
-      <Text content="These are the articles I have written" type="body" />
-      {loading ? (
-        <Loader />
-      ) : error ? (
-        errorData
-      ) : (
-        <AssetWrapper>
-          {renderArticleCards(
-            articles!,
-            isDesktopOrLarger,
-            isLargeDesktopForCards,
-            isMobile,
-            'article',
-          )}
-        </AssetWrapper>
-      )}
-    </Page>
+    <>
+      <title>GreenDream: Articles</title>
+      <Page>
+        <Text content="ARTICLES" type="title" />
+        <Text content="These are the articles I have written" type="body" />
+        {loading ? (
+          <Loader />
+        ) : error ? (
+          errorData
+        ) : (
+          <AssetWrapper>
+            {renderArticleCards(
+              articles!,
+              isDesktopOrLarger,
+              isLargeDesktopForCards,
+              isMobile,
+              'article',
+            )}
+          </AssetWrapper>
+        )}
+      </Page>
+    </>
   );
 }

@@ -3,8 +3,11 @@ import Page from '@/components/Page';
 
 export default function Home() {
   return (
-    <Page isHero>
-      <Hero />
-    </Page>
+    <>
+      <title>GreenDream: Programming and Games</title>
+      <Page isHero>
+        <Hero />
+      </Page>
+    </>
   );
 }

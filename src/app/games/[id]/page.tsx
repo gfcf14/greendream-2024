@@ -27,23 +27,26 @@ export default function GameDetails() {
   const isDownload = !game?.link.includes('https://');
 
   return (
-    <Page>
-      {loading ? (
-        <Loader />
-      ) : error ? (
-        errorData
-      ) : (
-        <>
-          <AssetLogo icon={game!.icon} />
-          <Text content={game!.name.toUpperCase()} type="title" />
-          <Text content={game!.description} type="body" />
-          <AssetInfo>
-            <AssetScreenshot file={game!.icon} />
-            <Details details={game!.details.split(';')} />
-          </AssetInfo>
-          <AssetButton isDownload={isDownload} isGame link={game!.link} />
-        </>
-      )}
-    </Page>
+    <>
+      <title>{`GreenDream: ${game ? game.name : ''}`}</title>
+      <Page>
+        {loading ? (
+          <Loader />
+        ) : error ? (
+          errorData
+        ) : (
+          <>
+            <AssetLogo icon={game!.icon} />
+            <Text content={game!.name.toUpperCase()} type="title" />
+            <Text content={game!.description} type="body" />
+            <AssetInfo>
+              <AssetScreenshot file={game!.icon} />
+              <Details details={game!.details.split(';')} />
+            </AssetInfo>
+            <AssetButton isDownload={isDownload} isGame link={game!.link} />
+          </>
+        )}
+      </Page>
+    </>
   );
 }

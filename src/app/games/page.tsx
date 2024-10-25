@@ -16,16 +16,19 @@ export default function Games() {
   const errorData = <p>{error}</p>;
 
   return (
-    <Page>
-      <Text content="GAMES" type="title" />
-      <Text content="These are the games I have developed" type="body" />
-      {loading ? (
-        <Loader />
-      ) : error ? (
-        errorData
-      ) : (
-        <AssetWrapper>{renderCards(games!, isMobile, 'game')}</AssetWrapper>
-      )}
-    </Page>
+    <>
+      <title>GreenDream: Games</title>
+      <Page>
+        <Text content="GAMES" type="title" />
+        <Text content="These are the games I have developed" type="body" />
+        {loading ? (
+          <Loader />
+        ) : error ? (
+          errorData
+        ) : (
+          <AssetWrapper>{renderCards(games!, isMobile, 'game')}</AssetWrapper>
+        )}
+      </Page>
+    </>
   );
 }
