@@ -21,7 +21,7 @@ const Overlay: React.FC<OverlayProps> = ({
       id={styles.overlay}
       onClick={onClick}
     >
-      {isMobile && (
+      {isMobile && !isModal && (
         <Image
           alt="Single Letter Logo"
           className={`${isOpen ? styles.open : ''}`}
