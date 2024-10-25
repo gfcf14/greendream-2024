@@ -12,6 +12,7 @@
 
 .detail {
   color: var(--color-theme-primary-1);
+  display: list-item;
   font: 16px var(--font-primary);
 }
 
