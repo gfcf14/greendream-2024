@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen, within } from '@testing-library/react';
 import Hero from '.';
 import useDeviceType from '@/utils/useDeviceType';
 
@@ -7,7 +7,37 @@ jest.mock('@/utils/useDeviceType', () => ({
   default: jest.fn(),
 }));
 
+const mockLatestData = [
+  {
+    icon: 'test-program.png',
+    id: 1,
+    name: 'Test Program Name',
+    type: 'program',
+  },
+  { icon: 'test-game.png', id: 1, name: 'Test Game Name', type: 'game' },
+  {
+    icon: 'test-article.png',
+    link: 'https://www.test.com/',
+    name: 'Test Program Name',
+    type: 'article',
+  },
+];
+
 describe('Hero component', () => {
+  beforeEach(() => {
+    global.fetch = jest.fn(() =>
+      Promise.resolve({
+        json: () => Promise.resolve(mockLatestData),
+      }),
+    ) as jest.Mock;
+    document.cookie = 'allow-cookies=accept';
+  });
+
+  afterEach(() => {
+    jest.clearAllMocks();
+    document.cookie = '';
+  });
+
   it('renders the hero text correctly', () => {
     (useDeviceType as jest.Mock).mockReturnValue({
       isDesktopOrLarger: true,
@@ -30,7 +60,9 @@ describe('Hero component', () => {
 
     render(<Hero />);
 
-    const button = screen.getByText("WHAT'S NEW?");
+    const button = within(screen.getByTestId('hero-wrapper')).getByText(
+      'LATEST WORK',
+    );
     expect(button).toBeInTheDocument();
   });
 
@@ -42,7 +74,9 @@ describe('Hero component', () => {
 
     render(<Hero />);
 
-    const button = screen.getByText("WHAT'S NEW?");
+    const button = within(screen.getByTestId('hero-wrapper')).getByText(
+      'LATEST WORK',
+    );
     expect(button).toBeInTheDocument();
   });
 
@@ -54,7 +88,9 @@ describe('Hero component', () => {
 
     render(<Hero />);
 
-    const buttonElements = screen.getAllByText("WHAT'S NEW?");
+    const buttonElements = within(
+      screen.getByTestId('hero-wrapper'),
+    ).getAllByText('LATEST WORK');
     expect(buttonElements.length).toBe(1);
   });
 
@@ -66,7 +102,9 @@ describe('Hero component', () => {
 
     render(<Hero />);
 
-    const buttonElements = screen.getAllByText("WHAT'S NEW?");
+    const buttonElements = within(
+      screen.getByTestId('hero-wrapper'),
+    ).getAllByText('LATEST WORK');
     expect(buttonElements.length).toBe(1);
   });
 });

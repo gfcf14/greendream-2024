@@ -4,11 +4,12 @@ import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import Contact from '@/components/Contact';
+import Overlay from '@/components/Overlay';
 import Modal from '@/components/Modal';
 import useDeviceType from '@/utils/useDeviceType';
 import Menu from './Menu';
 import MobileMenu from './MobileMenu';
-import Overlay from './Overlay';
+
 import Sandwich from './Sandwich';
 import TabletMenu from './TabletMenu';
 import styles from './NavBar.module.css';

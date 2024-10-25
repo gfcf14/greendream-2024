@@ -14,14 +14,13 @@
   flex-direction: column;
   gap: 16px;
   left: 50vw;
-  min-width: 296px;
   opacity: 0;
   padding: 16px;
   position: fixed;
+  text-align: center;
   top: 50vh;
   transform: translate(-50%, -50%);
   transition: opacity 0.3s, z-index 0.3s ease-in-out;
-  width: 66vw;
   z-index: -1;
 }
 .modal.open {
@@ -37,8 +36,8 @@
 .modal-description {
   color: var(--color-white);
   font: 12px var(--font-primary);
-  height: 14px;
   margin: auto;
+  min-height: 14px;
 }
 
 .modal-title {
@@ -63,14 +62,12 @@
 
   .modal {
     gap: 32px;
-    min-width: 480px;
     padding: 32px;
-    width: 55vw;
   }
 
   .modal-description {
     font-size: 18px;
-    height: 24px;
+    min-height: 24px;
   }
 
   .modal-title {
@@ -91,14 +88,12 @@
 
   .modal {
     gap: 32px;
-    min-width: 604px;
     padding: 32px;
-    width: 42vw;
   }
 
   .modal-description {
     font-size: 24px;
-    height: 26px;
+    min-height: 26px;
   }
 
   .modal-title {

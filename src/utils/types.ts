@@ -13,3 +13,11 @@ export interface Asset {
   name: string;
   link: string;
 }
+
+export interface LatestAsset {
+  icon: string;
+  id?: number;
+  link?: string;
+  name: string;
+  type: 'program' | 'game' | 'article';
+}

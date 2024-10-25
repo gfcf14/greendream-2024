@@ -23,5 +23,6 @@
   pointer-events: auto;
 }
 #overlay.modal {
+  top: 0;
   z-index: 5;
 }

@@ -32,6 +32,8 @@ export const buttonActionIcons: { [key: string]: ButtonActionIcon } = {
   },
 };
 
+export const clampLimit = 60;
+
 export const comicLinks: ExternalLink[] = [
   {
     logo: 'instagram.png',

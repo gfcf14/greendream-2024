@@ -5,7 +5,7 @@ const onClick = jest.fn();
 
 describe('NavBar Sandwich component', () => {
   it('renders the spans successfully', () => {
-    render(<Sandwich className="open" onClick={onClick} />);
+    render(<Sandwich isOpen onClick={onClick} />);
 
     const spans = screen.getAllByTestId('burger-span');
     expect(spans).toHaveLength(3);

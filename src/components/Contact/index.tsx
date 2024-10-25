@@ -115,43 +115,44 @@ const Contact: React.FC<ContactProps> = ({ onSubmit }) => {
 
   return (
     <>
-      {isSending && <Loader isModal />}
-      <div
-        className={`${styles['contact-form-wrapper']} ${isSending ? styles.sending : ''}`}
-      >
-        <Input
-          image="name"
-          name="name"
-          onChange={handleFieldChange}
-          placeholder="Your Name"
-          status={formState.name.status}
-          value={formState.name.value}
-        />
-        <Input
-          image="email"
-          name="email"
-          onChange={handleFieldChange}
-          placeholder="Your Email"
-          status={formState.email.status}
-          value={formState.email.value}
-        />
-        <TextArea
-          image="message"
-          name="message"
-          onChange={handleFieldChange}
-          placeholder="Your Message"
-          status={formState.message.status}
-          value={formState.message.value}
-        />
-        <Button
-          boundless
-          contained
-          disabled={formDisabled}
-          onClick={submit}
-          text="SEND"
-          type="primary"
-        />
-      </div>
+      {isSending ? (
+        <Loader isModal />
+      ) : (
+        <div className={`${styles['contact-form-wrapper']}`}>
+          <Input
+            image="name"
+            name="name"
+            onChange={handleFieldChange}
+            placeholder="Your Name"
+            status={formState.name.status}
+            value={formState.name.value}
+          />
+          <Input
+            image="email"
+            name="email"
+            onChange={handleFieldChange}
+            placeholder="Your Email"
+            status={formState.email.status}
+            value={formState.email.value}
+          />
+          <TextArea
+            image="message"
+            name="message"
+            onChange={handleFieldChange}
+            placeholder="Your Message"
+            status={formState.message.status}
+            value={formState.message.value}
+          />
+          <Button
+            boundless
+            contained
+            disabled={formDisabled}
+            onClick={submit}
+            text="SEND"
+            type="primary"
+          />
+        </div>
+      )}
     </>
   );
 };

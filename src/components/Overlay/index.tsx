@@ -3,14 +3,14 @@ import styles from './Overlay.module.css';
 
 interface OverlayProps {
   isMobile: boolean;
-  isModal: boolean;
+  isModal?: boolean;
   isOpen: boolean;
   onClick: () => void;
 }
 
 const Overlay: React.FC<OverlayProps> = ({
   isMobile,
-  isModal,
+  isModal = false,
   isOpen,
   onClick,
 }) => {
