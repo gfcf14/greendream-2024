@@ -1,6 +1,7 @@
 import { render, screen, waitFor } from '@testing-library/react';
 import Programs from '@/app/programs/page';
-import { ViewportProvider } from '@/context/ViewportContext';
+import { FlashMessageProvider } from '@/contexts/FlashMessageContext';
+import { ViewportProvider } from '@/contexts/ViewportContext';
 
 jest.mock('next/navigation', () => ({
   useRouter: jest.fn(),
@@ -39,7 +40,9 @@ describe('Programs Page', () => {
   it('renders the programs title and description correctly', async () => {
     render(
       <ViewportProvider>
-        <Programs />
+        <FlashMessageProvider>
+          <Programs />
+        </FlashMessageProvider>
       </ViewportProvider>,
     );
 
@@ -55,7 +58,9 @@ describe('Programs Page', () => {
   it('fetches and displays programs from the API', async () => {
     render(
       <ViewportProvider>
-        <Programs />
+        <FlashMessageProvider>
+          <Programs />
+        </FlashMessageProvider>
       </ViewportProvider>,
     );
 

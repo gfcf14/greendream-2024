@@ -5,6 +5,7 @@ import Loader from '@/components/Loader';
 import TextArea from '@/components/TextArea';
 import { emailRegex } from '@/constants';
 import styles from './Contact.module.css';
+import { useFlashMessage } from '@/contexts/FlashMessageContext';
 
 interface ContactProps {
   onSubmit: () => void;
@@ -44,6 +45,7 @@ const initialFormState = {
 const Contact: React.FC<ContactProps> = ({ onSubmit }) => {
   const [formState, setFormState] = useState<ContactState>(initialFormState);
   const [isSending, setSending] = useState(false);
+  const { showFlashMessage } = useFlashMessage();
 
   const validateField = (name: string, value: string) => {
     switch (name) {
@@ -97,10 +99,9 @@ const Contact: React.FC<ContactProps> = ({ onSubmit }) => {
       });
 
       if (response.ok) {
-        alert('Email sent successfully!');
+        showFlashMessage('Your message was sent', 'success');
       } else {
-        const errorData = await response.json();
-        alert(`Failed to send email: ${errorData.error}`);
+        showFlashMessage('Please try again later', 'error');
       }
 
       setFormState(initialFormState);

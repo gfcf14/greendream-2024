@@ -1,7 +1,8 @@
 import { useParams } from 'next/navigation';
 import { render, screen, waitFor } from '@testing-library/react';
 import GameDetails from '@/app/games/[id]/page';
-import { ViewportProvider } from '@/context/ViewportContext';
+import { FlashMessageProvider } from '@/contexts/FlashMessageContext';
+import { ViewportProvider } from '@/contexts/ViewportContext';
 
 const mockGameData = [
   {
@@ -37,7 +38,9 @@ describe('Game Details Page', () => {
   it('renders the game title, description, and details correctly', async () => {
     render(
       <ViewportProvider>
-        <GameDetails />
+        <FlashMessageProvider>
+          <GameDetails />
+        </FlashMessageProvider>
       </ViewportProvider>,
     );
 

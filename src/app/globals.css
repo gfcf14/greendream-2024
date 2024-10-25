@@ -18,6 +18,9 @@
   --color-theme-button-disabled: #6e948d;
   --color-theme-button-warning: #e92d2d;
 
+  --color-theme-flash-message-1: #e92d2d;
+  --color-theme-flash-message-2: #5e1414;
+
   /* GENERIC COLORS */
   --color-black: #000000;
   --color-gray: #808080;

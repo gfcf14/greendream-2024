@@ -1,5 +1,6 @@
 import { render, screen, within } from '@testing-library/react';
-import { ViewportProvider } from '@/context/ViewportContext';
+import { FlashMessageProvider } from '@/contexts/FlashMessageContext';
+import { ViewportProvider } from '@/contexts/ViewportContext';
 import About from './page';
 
 jest.mock('next/navigation', () => ({
@@ -10,7 +11,9 @@ describe('About page', () => {
   it('renders the page components successfully', () => {
     render(
       <ViewportProvider>
-        <About />
+        <FlashMessageProvider>
+          <About />
+        </FlashMessageProvider>
       </ViewportProvider>,
     );
 

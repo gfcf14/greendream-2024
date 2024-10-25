@@ -1,6 +1,7 @@
 import { render, screen, waitFor } from '@testing-library/react';
 import Games from '@/app/games/page';
-import { ViewportProvider } from '@/context/ViewportContext';
+import { FlashMessageProvider } from '@/contexts/FlashMessageContext';
+import { ViewportProvider } from '@/contexts/ViewportContext';
 
 jest.mock('next/navigation', () => ({
   useRouter: jest.fn(),
@@ -39,7 +40,9 @@ describe('Games Page', () => {
   it('renders the games title and description correctly', async () => {
     render(
       <ViewportProvider>
-        <Games />
+        <FlashMessageProvider>
+          <Games />
+        </FlashMessageProvider>
       </ViewportProvider>,
     );
 
@@ -55,7 +58,9 @@ describe('Games Page', () => {
   it('fetches and displays games from the API', async () => {
     render(
       <ViewportProvider>
-        <Games />
+        <FlashMessageProvider>
+          <Games />
+        </FlashMessageProvider>
       </ViewportProvider>,
     );
 

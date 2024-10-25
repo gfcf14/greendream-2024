@@ -1,5 +1,6 @@
 import { render, screen, waitFor } from '@testing-library/react';
-import { ViewportProvider } from '@/context/ViewportContext';
+import { FlashMessageProvider } from '@/contexts/FlashMessageContext';
+import { ViewportProvider } from '@/contexts/ViewportContext';
 import Articles from './page';
 
 jest.mock('next/navigation', () => ({
@@ -39,7 +40,9 @@ describe('Articles Page', () => {
   it('renders the page title and description correctly', async () => {
     render(
       <ViewportProvider>
-        <Articles />
+        <FlashMessageProvider>
+          <Articles />
+        </FlashMessageProvider>
       </ViewportProvider>,
     );
 
@@ -55,7 +58,9 @@ describe('Articles Page', () => {
   it('fetches and displays articles from the API', async () => {
     render(
       <ViewportProvider>
-        <Articles />
+        <FlashMessageProvider>
+          <Articles />
+        </FlashMessageProvider>
       </ViewportProvider>,
     );
 

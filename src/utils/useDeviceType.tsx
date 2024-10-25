@@ -1,4 +1,4 @@
-import { useViewport } from '@/context/ViewportContext';
+import { useViewport } from '@/contexts/ViewportContext';
 
 const useDeviceType = () => {
   const { width } = useViewport();

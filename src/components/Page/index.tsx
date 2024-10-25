@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import Alert from '@/components/Alert';
+import FlashMessage from '@/components/FlashMessage';
 import NavBar from '@/components/NavBar';
 import { hasCookie, setCookie } from '@/helpers/cookies';
 import styles from './Page.module.css';
@@ -45,6 +46,7 @@ const Page: React.FC<PageProps> = ({ children, isHero = false }) => {
           onReject={handleReject}
         />
       )}
+      <FlashMessage />
     </>
   );
 };

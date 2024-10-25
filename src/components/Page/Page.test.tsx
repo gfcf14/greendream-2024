@@ -1,5 +1,6 @@
 import { render, screen } from '@testing-library/react';
-import { ViewportProvider } from '@/context/ViewportContext';
+import { FlashMessageProvider } from '@/contexts/FlashMessageContext';
+import { ViewportProvider } from '@/contexts/ViewportContext';
 import Page from '.';
 
 jest.mock('next/navigation', () => ({
@@ -10,9 +11,11 @@ describe('Page component', () => {
   it('renders a non-hero page', () => {
     render(
       <ViewportProvider>
-        <Page>
-          <p>test</p>
-        </Page>
+        <FlashMessageProvider>
+          <Page>
+            <p>test</p>
+          </Page>
+        </FlashMessageProvider>
       </ViewportProvider>,
     );
 
@@ -24,9 +27,11 @@ describe('Page component', () => {
   it('renders a hero page', () => {
     render(
       <ViewportProvider>
-        <Page isHero>
-          <p>test</p>
-        </Page>
+        <FlashMessageProvider>
+          <Page isHero>
+            <p>test</p>
+          </Page>
+        </FlashMessageProvider>
       </ViewportProvider>,
     );
 

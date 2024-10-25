@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import { ViewportProvider } from '@/context/ViewportContext';
+import { ViewportProvider } from '@/contexts/ViewportContext';
 import Alert from '.';
 
 describe('Alert component', () => {

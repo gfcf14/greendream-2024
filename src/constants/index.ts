@@ -77,6 +77,8 @@ export const creativeLinks: ExternalLink[] = [
 
 export const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
+export const flashMessageFadeTime = 5000;
+
 export const inputIcons: { [key: string]: string } = {
   email: 'email.svg',
   message: 'message.svg',
