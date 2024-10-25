@@ -24,7 +24,7 @@ export async function GET() {
 
     const html = await response.text();
     const $ = cheerio.load(html);
-    const lastArticle = $('article').last();
+    const lastArticle = $('article').first();
     const article = {
       name: lastArticle.find('h2').text(),
       icon: lastArticle.find('img').last().attr('src') || '',
