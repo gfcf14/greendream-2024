@@ -23,7 +23,7 @@
   color: var(--color-theme-secondary-2);
 }
 
-@media (min-width: 769px) {
+@media (min-width: 768px) {
   .menu-option {
     font: 18px var(--font-secondary);
     margin: 0 0 32px;
@@ -31,7 +31,7 @@
   }
 }
 
-@media (min-width: 1025px) {
+@media (min-width: 1024px) {
   .menu-option {
     font: bold 20px var(--font-primary);
     height: 24px;

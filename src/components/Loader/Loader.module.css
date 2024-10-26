@@ -56,7 +56,7 @@
   border-top-color: var(--color-theme-secondary-3);
 }
 
-@media (min-width: 769px) {
+@media (min-width: 768px) {
   #loader {
     height: 125px;
   }
@@ -71,7 +71,7 @@
   }
 }
 
-@media (min-width: 1025px) {
+@media (min-width: 1024px) {
   #loader {
     height: 150px;
   }

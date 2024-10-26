@@ -14,13 +14,13 @@
   width: 100vw;
 }
 
-@media (min-width: 769px) {
+@media (min-width: 768px) {
   .container {
     z-index: 4;
   }
 }
 
-@media (min-width: 1025px) {
+@media (min-width: 1024px) {
   .container {
     padding: 22px 45px 22px 22px;
   }

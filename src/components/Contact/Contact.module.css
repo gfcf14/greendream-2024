@@ -6,7 +6,7 @@
   width: 66vw;
 }
 
-@media (min-width: 769px) {
+@media (min-width: 768px) {
   .contact-form-wrapper {
     gap: 32px;
     min-width: 480px;
@@ -14,7 +14,7 @@
   }
 }
 
-@media (min-width: 1025px) {
+@media (min-width: 1024px) {
   .contact-form-wrapper {
     min-width: 604px;
     width: 42vw;

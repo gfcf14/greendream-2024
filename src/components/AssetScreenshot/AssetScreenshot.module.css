@@ -9,13 +9,13 @@
   width: 100%;
 }
 
-@media (min-width: 769px) {
+@media (min-width: 768px) {
   #image {
     height: 240.75px;
   }
 }
 
-@media (min-width: 1025px) {
+@media (min-width: 1024px) {
   #image {
     height: 40vh;
     width: calc(50% - 16px);

@@ -5,7 +5,7 @@
   margin: 0 0 32px;
 }
 
-@media (min-width: 769px) {
+@media (min-width: 768px) {
   .section-wrapper {
     flex-direction: row;
   }

@@ -25,7 +25,7 @@
   gap: 32px;
 }
 
-@media (min-width: 769px) {
+@media (min-width: 768px) {
   .image-container {
     width: 100%;
   }
@@ -46,7 +46,7 @@
   }
 }
 
-@media (min-width: 1025px) {
+@media (min-width: 1024px) {
   .image-container img.boundless {
     max-width: 600px;
   }

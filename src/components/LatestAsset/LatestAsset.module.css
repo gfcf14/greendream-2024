@@ -39,7 +39,7 @@
   text-align: left;
 }
 
-@media (min-width: 769px) {
+@media (min-width: 768px) {
   .icon {
     height: 92px;
     width: 92px;
@@ -58,7 +58,7 @@
   }
 }
 
-@media (min-width: 1025px) {
+@media (min-width: 1024px) {
   .latest-asset-container {
     max-width: 372px;
     width: calc((100% - 64px) / 3);

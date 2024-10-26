@@ -41,7 +41,7 @@
   width: calc(100vw - 64px);
 } */
 
-@media (min-width: 769px) {
+@media (min-width: 768px) {
   .content-container {
     flex-direction: row;
     gap: 24px;
@@ -59,7 +59,7 @@
   }
 }
 
-@media (min-width: 1025px) {
+@media (min-width: 1024px) {
   .content-container {
     height: calc(100% - 48px);
     margin: 0;

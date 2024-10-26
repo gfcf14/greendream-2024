@@ -54,7 +54,7 @@
   width: 100%;
 }
 
-@media (min-width: 769px) {
+@media (min-width: 768px) {
   .close-image {
     height: 30px;
     width: 30px;
@@ -80,7 +80,7 @@
   }
 }
 
-@media (min-width: 1025px) {
+@media (min-width: 1024px) {
   .close-image {
     height: 36px;
     width: 36px;

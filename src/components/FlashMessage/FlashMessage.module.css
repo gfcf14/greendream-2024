@@ -59,7 +59,7 @@
   opacity: 1;
 }
 
-@media (min-width: 769px) {
+@media (min-width: 768px) {
   .flash-header {
     font-size: 22px;
   }
@@ -79,7 +79,7 @@
   }
 }
 
-@media (min-width: 1025px) {
+@media (min-width: 1024px) {
   .flash-header {
     font-size: 32px;
   }

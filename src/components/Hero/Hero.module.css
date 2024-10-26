@@ -21,7 +21,7 @@
   width: 100%;
 }
 
-@media (min-width: 769px) {
+@media (min-width: 768px) {
   /* #hero {
     height: 934px; 
   } */
@@ -31,7 +31,7 @@
   }
 }
 
-@media (min-width: 1025px) {
+@media (min-width: 1024px) {
   #hero {
     background-position: 0 50%;
     background-size: 100% auto;

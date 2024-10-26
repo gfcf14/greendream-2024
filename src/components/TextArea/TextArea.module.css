@@ -39,7 +39,7 @@
   filter: invert(34%) sepia(76%) saturate(1605%) hue-rotate(145deg) brightness(91%) contrast(45%);
 }
 
-@media (min-width: 769px) {
+@media (min-width: 768px) {
   .textarea-container textarea {
     font-size: 18px;
     height: 144px;
@@ -53,7 +53,7 @@
   }
 }
 
-@media (min-width: 1025px) {
+@media (min-width: 1024px) {
   .textarea-container textarea {
     font-size: 24px;
     height: 152px;

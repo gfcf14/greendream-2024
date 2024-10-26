@@ -30,7 +30,7 @@
   height: 18px;
 }
 
-@media (min-width: 1025px) {
+@media (min-width: 1024px) {
   .wrapper {
     width: calc(50% - 16px);
   }

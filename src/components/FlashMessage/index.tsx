@@ -5,7 +5,7 @@ import styles from './FlashMessage.module.css';
 const FlashMessage: React.FC = () => {
   const { flashMessage } = useFlashMessage();
 
-  const { message, type = 'success' } = flashMessage;
+  const { message, type } = flashMessage;
   const isActive = !!flashMessage.message;
 
   return (
@@ -16,7 +16,7 @@ const FlashMessage: React.FC = () => {
         <img
           alt="flash-message-icon"
           className={styles['flash-icon']}
-          src={`/images/icons/${type}.svg`}
+          src={`/images/icons/${type || 'success'}.svg`}
         />
       </div>
       <div className={styles['text-container']}>

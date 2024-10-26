@@ -13,7 +13,7 @@
   width: 100%;
 }
 
-@media (min-width: 769px) {
+@media (min-width: 768px) {
   .separator {
     margin: 0 0 32px;
   }

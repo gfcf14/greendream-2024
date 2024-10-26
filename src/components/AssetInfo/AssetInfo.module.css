@@ -5,7 +5,7 @@
   margin: 0 0 32px;
 }
 
-@media (min-width: 1025px) {
+@media (min-width: 1024px) {
   .wrapper {
     flex-direction: row;
   }

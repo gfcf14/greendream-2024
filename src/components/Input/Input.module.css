@@ -44,7 +44,7 @@
   filter: invert(34%) sepia(76%) saturate(1605%) hue-rotate(145deg) brightness(91%) contrast(45%);
 }
 
-@media (min-width: 769px) {
+@media (min-width: 768px) {
   .input-container input {
     font-size: 18px;
     height: 36px;
@@ -64,7 +64,7 @@
   }
 }
 
-@media (min-width: 1025px) {
+@media (min-width: 1024px) {
   .input-container input {
     font-size: 24px;
     height: 38px;

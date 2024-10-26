@@ -22,7 +22,7 @@
   width: 150px;
 }
 
-@media (min-width: 769px) {
+@media (min-width: 768px) {
   .icon {
     height: 18px;
   }
@@ -37,7 +37,7 @@
   }
 }
 
-@media (min-width: 1025px) {
+@media (min-width: 1024px) {
   .icon {
     height: 24px;
   }
