@@ -23,7 +23,7 @@ export default function About() {
           <Section>
             <Text contained content="THE SITE" type="title" />
             <SplitContent
-              image="/images/logos.png"
+              image="/images/logos.webp"
               imageFirst={isTabletOrLarger}
               text="Welcome to my website! This is a project created using different development technologies, all hosted in a Vercel project, using NextJS as the frontend, Typescript for precision in handling data, HTML5 and CSS3 for basic effects, and SQLite for database management for the different tables for programs, and games. The articles are fetched using Cheerio to scrape my profile."
             />
@@ -32,7 +32,7 @@ export default function About() {
           <Section>
             <Text contained content="ME" type="title" />
             <SplitContent
-              image="/images/avatar.png"
+              image="/images/avatar.webp"
               imageFirst
               rounded
               text="I have been a developer for well over a decade, and when my job doesn't keep me busy I work on personal projects, such as updating this website."
@@ -79,7 +79,7 @@ export default function About() {
             <Text contained content="WEBDEV TOONS" type="title" />
             <SplitContent
               boundless
-              image="/images/comic.png"
+              image="/images/comic.webp"
               imageFirst={isTabletOrLarger}
               text="This is a comic I update every Monday about Devin Webb (so it reads as Web Dev when putting the surname first), a software developer involved in diverse adventures with friends who may or may not share the same love for technology. If you wish to read it, please follow any of the links below:"
             />

@@ -36,17 +36,17 @@ export const clampLimit = 60;
 
 export const comicLinks: ExternalLink[] = [
   {
-    logo: 'instagram.png',
+    logo: 'instagram.webp',
     text: 'Instagram',
     url: 'https://www.instagram.com/webdevtoons/',
   },
   {
-    logo: 'x.png',
+    logo: 'x.webp',
     text: 'X',
     url: 'https://twitter.com/webdevtoons',
   },
   {
-    logo: 'facebook.png',
+    logo: 'facebook.webp',
     text: 'Facebook',
     url: 'https://www.facebook.com/webdevtoons',
   },
@@ -54,22 +54,22 @@ export const comicLinks: ExternalLink[] = [
 
 export const creativeLinks: ExternalLink[] = [
   {
-    logo: 'instagram.png',
+    logo: 'instagram.webp',
     text: 'Instagram',
     url: 'https://www.instagram.com/gfcf14/',
   },
   {
-    logo: 'deviantart.png',
+    logo: 'deviantart.webp',
     text: 'DeviantArt',
     url: 'https://www.deviantart.com/gfcf14',
   },
   {
-    logo: 'x.png',
+    logo: 'x.webp',
     text: 'X',
     url: 'https://twitter.com/gfcf14',
   },
   {
-    logo: 'fanfiction.png',
+    logo: 'fanfiction.webp',
     text: 'FanFiction',
     url: 'https://www.fanfiction.net/u/3545076',
   },
@@ -111,22 +111,22 @@ export const nodeMailerReceiver = process.env.EMAIL_RECEIVER;
 
 export const professionalLinks: ExternalLink[] = [
   {
-    logo: 'linkedin.png',
+    logo: 'linkedin.webp',
     text: 'LinkedIn',
     url: 'https://www.linkedin.com/in/carlos-cuba-a2a7b26a/',
   },
   {
-    logo: 'github.png',
+    logo: 'github.webp',
     text: 'GitHub',
     url: 'https://github.com/gfcf14',
   },
   {
-    logo: 'medium.png',
+    logo: 'medium.webp',
     text: 'Medium',
     url: 'https://carloscuba014.medium.com/',
   },
   {
-    logo: 'codepen.png',
+    logo: 'codepen.webp',
     text: 'CodePen',
     url: 'https://codepen.io/gfcf14',
   },

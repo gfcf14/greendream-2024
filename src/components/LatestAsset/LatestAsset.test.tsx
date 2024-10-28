@@ -8,14 +8,14 @@ jest.mock('next/navigation', () => ({
 describe('LatestAsset component', () => {
   it('renders the component successfully', () => {
     render(
-      <LatestAsset icon="test-icon.png" name="test-name" type="program" />,
+      <LatestAsset icon="test-icon.webp" name="test-name" type="program" />,
     );
 
     expect(screen.getByText(/Program:/i)).toBeInTheDocument();
     expect(screen.getByText(/test-name/i)).toBeInTheDocument();
     expect(screen.getByAltText('latest-asset-image')).toHaveProperty(
       'src',
-      expect.stringContaining('test-icon.png'),
+      expect.stringContaining('test-icon.webp'),
     );
   });
 });

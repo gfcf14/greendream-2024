@@ -20,7 +20,7 @@ describe('ExternalLink component', () => {
   });
 
   it('renders the component with a logo successfully', () => {
-    const logo = 'test-logo.png';
+    const logo = 'test-logo.webp';
 
     render(<ExternalLink logo={logo} text={text} url={url} />);
 

@@ -3,17 +3,17 @@ import SplitContent from '.';
 
 describe('SplitContent component', () => {
   it('renders the component successfully', () => {
-    render(<SplitContent image="test.png" text="test" />);
+    render(<SplitContent image="test.webp" text="test" />);
 
     expect(screen.getByText(/test/i)).toBeInTheDocument();
     expect(screen.getByAltText('content-image')).toHaveAttribute(
       'src',
-      expect.stringContaining('test.png'),
+      expect.stringContaining('test.webp'),
     );
   });
 
   it('renders the component with image attributes successfully', () => {
-    render(<SplitContent boundless image="test.png" rounded text="test" />);
+    render(<SplitContent boundless image="test.webp" rounded text="test" />);
 
     expect(screen.getByText(/test/i)).toBeInTheDocument();
     expect(screen.getByAltText('content-image')).toHaveClass('boundless');

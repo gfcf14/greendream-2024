@@ -12,13 +12,13 @@ describe('Programs Page', () => {
     {
       id: 1,
       name: 'Program 1',
-      icon: 'icon1.png',
+      icon: 'icon1.webp',
       description: 'Description for Program 1',
     },
     {
       id: 2,
       name: 'Program 2',
-      icon: 'icon2.png',
+      icon: 'icon2.webp',
       description: 'Description for Program 2',
     },
   ];

@@ -12,13 +12,13 @@ describe('Games Page', () => {
     {
       id: 1,
       name: 'Game 1',
-      icon: 'icon1.png',
+      icon: 'icon1.webp',
       description: 'Description for Game 1',
     },
     {
       id: 2,
       name: 'Game 2',
-      icon: 'icon2.png',
+      icon: 'icon2.webp',
       description: 'Description for Game 2',
     },
   ];

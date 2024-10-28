@@ -8,7 +8,7 @@ const mockGameData = [
   {
     id: 1,
     name: 'Game 1',
-    icon: 'icon1.png',
+    icon: 'icon1.webp',
     description: 'Description for Game 1',
     details: 'detail 1;detail 2',
     link: '/downloads/test.zip',

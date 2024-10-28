@@ -3,9 +3,9 @@ import AssetScreenshot from '.';
 
 describe('AssetScreenshot component', () => {
   it('renders the component successfully', () => {
-    render(<AssetScreenshot file="test.png" />);
+    render(<AssetScreenshot file="test.webp" />);
     expect(screen.getByTestId('asset-screenshot')).toHaveStyle(
-      'background-image: url("/images/screenshots/test.png")',
+      'background-image: url("/images/screenshots/test.webp")',
     );
   });
 });

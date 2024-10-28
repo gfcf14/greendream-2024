@@ -11,13 +11,13 @@ describe('Articles Page', () => {
   const mockArticlesData = [
     {
       description: 'test description 1',
-      image: 'test-1.png',
+      image: 'test-1.webp',
       title: 'test title 1',
       url: 'www.test-1.com',
     },
     {
       description: 'test description 2',
-      image: 'test-2.png',
+      image: 'test-2.webp',
       title: 'test title 2',
       url: 'www.test-2.com',
     },

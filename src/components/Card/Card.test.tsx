@@ -4,7 +4,7 @@ import Card from '.';
 
 const cardProps = {
   description: 'test description',
-  icon: 'test-icon.png',
+  icon: 'test-icon.webp',
   id: 0,
   name: 'test name',
   type: 'program',

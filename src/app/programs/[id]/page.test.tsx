@@ -7,7 +7,7 @@ const mockProgramData = [
   {
     id: 1,
     name: 'Program 1',
-    icon: 'icon1.png',
+    icon: 'icon1.webp',
     description: 'Description for Program 1',
     details: 'detail 1;detail 2',
     link: '/downloads/test.zip',

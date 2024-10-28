@@ -9,14 +9,14 @@ jest.mock('@/utils/useDeviceType', () => ({
 
 const mockLatestData = [
   {
-    icon: 'test-program.png',
+    icon: 'test-program.webp',
     id: 1,
     name: 'Test Program Name',
     type: 'program',
   },
-  { icon: 'test-game.png', id: 1, name: 'Test Game Name', type: 'game' },
+  { icon: 'test-game.webp', id: 1, name: 'Test Game Name', type: 'game' },
   {
-    icon: 'test-article.png',
+    icon: 'test-article.webp',
     link: 'https://www.test.com/',
     name: 'Test Program Name',
     type: 'article',
