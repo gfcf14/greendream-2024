@@ -1,4 +1,6 @@
+import createDOMPurify from 'dompurify';
 import nodemailer from 'nodemailer';
+import { JSDOM } from 'jsdom';
 import { NextResponse } from 'next/server';
 
 const transporter = nodemailer.createTransport({
@@ -13,20 +15,27 @@ export async function POST(req: Request) {
   try {
     const { name, email, message } = await req.json();
 
+    const window = new JSDOM('').window;
+    const DOMPurify = createDOMPurify(window);
+
+    const sanitizedName = DOMPurify.sanitize(name);
+    const sanitizedEmail = DOMPurify.sanitize(email);
+    const sanitizedMessage = DOMPurify.sanitize(message);
+
     const mailOptions = {
       from: process.env.EMAIL_USER,
       to: process.env.EMAIL_RECEIVER,
-      subject: `GreenDream: New message from ${name}`,
+      subject: `GreenDream: New message from ${sanitizedName}`,
       html: `
         <head>
           <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
           <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
         </head>
         <body>
-          <h3 style="color: #005a2b; font-family: 'Orbitron', sans-serif;">NEW MESSAGE FROM: ${name}</h3>
-          <p style="font-family: 'Roboto', sans-serif;">${message}</p>
+          <h3 style="color: #005a2b; font-family: 'Orbitron', sans-serif;">NEW MESSAGE FROM: ${sanitizedName}</h3>
+          <p style="font-family: 'Roboto', sans-serif;">${sanitizedMessage}</p>
           <br>
-          <p style="color: #00805c; font-family: 'Orbitron', sans-serif;">Please reply to: <a href="mailto:${email}?subject=Replying to Your message to GreenDream" style="color: #000080; cursor: pointer; font-family: 'Roboto', sans-serif">${email}</a></p>
+          <p style="color: #00805c; font-family: 'Orbitron', sans-serif;">Please reply to: <a href="mailto:${sanitizedEmail}?subject=Replying to Your message to GreenDream" style="color: #000080; cursor: pointer; font-family: 'Roboto', sans-serif">${email}</a></p>
           <img alt='logo-image' src='https://greendream-2024.vercel.app/images/logo.svg' style="width: 200px;">
         </body>
       `,
