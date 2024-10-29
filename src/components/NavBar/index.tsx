@@ -13,11 +13,12 @@ import MobileMenu from './MobileMenu';
 import Sandwich from './Sandwich';
 import TabletMenu from './TabletMenu';
 import styles from './NavBar.module.css';
+import { useContactForm } from '@/contexts/ContactFormContext';
 
 const NavBar: React.FC = () => {
   const { isDesktopOrLarger, isMobile, isTablet, isTabletOrSmaller } =
     useDeviceType();
-  const [isContactFormOpen, setContactFormOpen] = useState(false);
+  const { isContactFormOpen, setContactFormOpen } = useContactForm();
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [menuOpacity, setMenuOpacity] = useState(0);
 

@@ -1,4 +1,5 @@
 import { render, screen, waitFor } from '@testing-library/react';
+import { ContactFormProvider } from '@/contexts/ContactFormContext';
 import { FlashMessageProvider } from '@/contexts/FlashMessageContext';
 import { ViewportProvider } from '@/contexts/ViewportContext';
 import Articles from './page';
@@ -6,6 +7,16 @@ import Articles from './page';
 jest.mock('next/navigation', () => ({
   useRouter: jest.fn(),
 }));
+
+const component = (
+  <ViewportProvider>
+    <FlashMessageProvider>
+      <ContactFormProvider>
+        <Articles />
+      </ContactFormProvider>
+    </FlashMessageProvider>
+  </ViewportProvider>
+);
 
 describe('Articles Page', () => {
   const mockArticlesData = [
@@ -38,13 +49,7 @@ describe('Articles Page', () => {
   });
 
   it('renders the page title and description correctly', async () => {
-    render(
-      <ViewportProvider>
-        <FlashMessageProvider>
-          <Articles />
-        </FlashMessageProvider>
-      </ViewportProvider>,
-    );
+    render(component);
 
     const title = screen.getByTestId('text-title');
     expect(title).toBeInTheDocument();
@@ -56,13 +61,7 @@ describe('Articles Page', () => {
   });
 
   it('fetches and displays articles from the API', async () => {
-    render(
-      <ViewportProvider>
-        <FlashMessageProvider>
-          <Articles />
-        </FlashMessageProvider>
-      </ViewportProvider>,
-    );
+    render(component);
 
     await waitFor(() => {
       expect(fetch).toHaveBeenCalledWith('/api/articles');

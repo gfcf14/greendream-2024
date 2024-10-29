@@ -9,12 +9,19 @@ import SectionWrapper from '@/components/SectionWrapper';
 import SplitContent from '@/components/SplitContent';
 import Text from '@/components/Text';
 import { comicLinks, creativeLinks, professionalLinks } from '@/constants';
+import { useContactForm } from '@/contexts/ContactFormContext';
 import { downloadFile } from '@/helpers/downloadFile';
 import { renderExternalLinks } from '@/helpers/renderExternalLinks';
 import useDeviceType from '@/utils/useDeviceType';
 
 export default function About() {
   const { isTabletOrLarger } = useDeviceType();
+  const { setContactFormOpen } = useContactForm();
+
+  const openContactForm = () => {
+    setContactFormOpen(true);
+  };
+
   return (
     <>
       <title>GreenDream: About</title>
@@ -57,7 +64,10 @@ export default function About() {
           {renderExternalLinks(professionalLinks, 'professional')}
         </Section>
 
-        <CallToAction text="If you have any questions, please feel free to contact me pushing the button below or the action button in the nav menu."></CallToAction>
+        <CallToAction
+          buttonAction={openContactForm}
+          text="If you have any questions, please feel free to contact me pushing the button below or the action button in the nav menu."
+        ></CallToAction>
 
         <Text
           content="Besides my professional work, I am involved in different hobbies/activities, as described below:"

@@ -1,4 +1,5 @@
 import { render, screen } from '@testing-library/react';
+import { ContactFormProvider } from '@/contexts/ContactFormContext';
 import { FlashMessageProvider } from '@/contexts/FlashMessageContext';
 import { ViewportProvider } from '@/contexts/ViewportContext';
 import Page from '.';
@@ -12,9 +13,11 @@ describe('Page component', () => {
     render(
       <ViewportProvider>
         <FlashMessageProvider>
-          <Page>
-            <p>test</p>
-          </Page>
+          <ContactFormProvider>
+            <Page>
+              <p>test</p>
+            </Page>
+          </ContactFormProvider>
         </FlashMessageProvider>
       </ViewportProvider>,
     );
@@ -28,9 +31,11 @@ describe('Page component', () => {
     render(
       <ViewportProvider>
         <FlashMessageProvider>
-          <Page isHero>
-            <p>test</p>
-          </Page>
+          <ContactFormProvider>
+            <Page isHero>
+              <p>test</p>
+            </Page>
+          </ContactFormProvider>
         </FlashMessageProvider>
       </ViewportProvider>,
     );

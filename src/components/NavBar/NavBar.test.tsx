@@ -1,4 +1,5 @@
 import { fireEvent, render, screen } from '@testing-library/react';
+import { ContactFormProvider } from '@/contexts/ContactFormContext';
 import { FlashMessageProvider } from '@/contexts/FlashMessageContext';
 import useDeviceType from '@/utils/useDeviceType';
 import NavBar from '.';
@@ -8,6 +9,14 @@ jest.mock('@/utils/useDeviceType', () => jest.fn());
 jest.mock('next/navigation', () => ({
   useRouter: jest.fn(),
 }));
+
+const component = (
+  <FlashMessageProvider>
+    <ContactFormProvider>
+      <NavBar />
+    </ContactFormProvider>
+  </FlashMessageProvider>
+);
 
 describe('NavBar Component', () => {
   const mockUseDeviceType = useDeviceType as jest.Mock;
@@ -24,11 +33,7 @@ describe('NavBar Component', () => {
       isTabletOrSmaller: false,
     });
 
-    render(
-      <FlashMessageProvider>
-        <NavBar />
-      </FlashMessageProvider>,
-    );
+    render(component);
 
     const logo = screen.getByAltText('GreenDream logo');
     expect(logo).toBeInTheDocument();
@@ -42,11 +47,7 @@ describe('NavBar Component', () => {
       isTabletOrSmaller: false,
     });
 
-    render(
-      <FlashMessageProvider>
-        <NavBar />
-      </FlashMessageProvider>,
-    );
+    render(component);
 
     expect(screen.getByRole('navigation')).toBeInTheDocument();
   });
@@ -59,11 +60,7 @@ describe('NavBar Component', () => {
       isTabletOrSmaller: true,
     });
 
-    render(
-      <FlashMessageProvider>
-        <NavBar />
-      </FlashMessageProvider>,
-    );
+    render(component);
     expect(screen.getByTestId('sandwich-button')).toBeInTheDocument();
   });
 
@@ -75,11 +72,7 @@ describe('NavBar Component', () => {
       isTabletOrSmaller: true,
     });
 
-    render(
-      <FlashMessageProvider>
-        <NavBar />
-      </FlashMessageProvider>,
-    );
+    render(component);
     const mobileMenuAside = screen.getByTestId('mobile-menu-aside');
     expect(mobileMenuAside).not.toHaveClass('open');
 
@@ -98,11 +91,7 @@ describe('NavBar Component', () => {
       isTabletOrSmaller: true,
     });
 
-    render(
-      <FlashMessageProvider>
-        <NavBar />
-      </FlashMessageProvider>,
-    );
+    render(component);
     const mobileMenuAside = screen.getByTestId('mobile-menu-aside');
 
     fireEvent.click(screen.getByTestId('sandwich-button'));
@@ -120,11 +109,7 @@ describe('NavBar Component', () => {
       isTabletOrSmaller: true,
     });
 
-    render(
-      <FlashMessageProvider>
-        <NavBar />
-      </FlashMessageProvider>,
-    );
+    render(component);
     const tabletMenuSection = screen.getByTestId('tablet-menu-section');
     expect(tabletMenuSection).not.toHaveClass('open');
 
@@ -143,11 +128,7 @@ describe('NavBar Component', () => {
       isTabletOrSmaller: true,
     });
 
-    render(
-      <FlashMessageProvider>
-        <NavBar />
-      </FlashMessageProvider>,
-    );
+    render(component);
     const tabletMenuSection = screen.getByTestId('tablet-menu-section');
 
     fireEvent.click(screen.getByTestId('sandwich-button'));

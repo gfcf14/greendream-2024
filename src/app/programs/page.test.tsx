@@ -1,11 +1,22 @@
 import { render, screen, waitFor } from '@testing-library/react';
 import Programs from '@/app/programs/page';
+import { ContactFormProvider } from '@/contexts/ContactFormContext';
 import { FlashMessageProvider } from '@/contexts/FlashMessageContext';
 import { ViewportProvider } from '@/contexts/ViewportContext';
 
 jest.mock('next/navigation', () => ({
   useRouter: jest.fn(),
 }));
+
+const component = (
+  <ViewportProvider>
+    <FlashMessageProvider>
+      <ContactFormProvider>
+        <Programs />
+      </ContactFormProvider>
+    </FlashMessageProvider>
+  </ViewportProvider>
+);
 
 describe('Programs Page', () => {
   const mockProgramsData = [
@@ -38,13 +49,7 @@ describe('Programs Page', () => {
   });
 
   it('renders the programs title and description correctly', async () => {
-    render(
-      <ViewportProvider>
-        <FlashMessageProvider>
-          <Programs />
-        </FlashMessageProvider>
-      </ViewportProvider>,
-    );
+    render(component);
 
     const title = screen.getByTestId('text-title');
     expect(title).toBeInTheDocument();
@@ -56,13 +61,7 @@ describe('Programs Page', () => {
   });
 
   it('fetches and displays programs from the API', async () => {
-    render(
-      <ViewportProvider>
-        <FlashMessageProvider>
-          <Programs />
-        </FlashMessageProvider>
-      </ViewportProvider>,
-    );
+    render(component);
 
     await waitFor(() => {
       expect(fetch).toHaveBeenCalledWith('/api/programs');

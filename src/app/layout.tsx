@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
+import { ContactFormProvider } from '@/contexts/ContactFormContext';
 import { FlashMessageProvider } from '@/contexts/FlashMessageContext';
 import { ViewportProvider } from '@/contexts/ViewportContext';
 
@@ -15,7 +16,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <ViewportProvider>
-          <FlashMessageProvider>{children}</FlashMessageProvider>
+          <FlashMessageProvider>
+            <ContactFormProvider>{children}</ContactFormProvider>
+          </FlashMessageProvider>
         </ViewportProvider>
       </body>
     </html>

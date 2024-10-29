@@ -1,5 +1,6 @@
 import { render, screen, waitFor } from '@testing-library/react';
 import GameDetails from '@/app/games/[id]/page';
+import { ContactFormProvider } from '@/contexts/ContactFormContext';
 import { FlashMessageProvider } from '@/contexts/FlashMessageContext';
 import { ViewportProvider } from '@/contexts/ViewportContext';
 
@@ -38,7 +39,9 @@ describe('Program Details Page', () => {
     render(
       <ViewportProvider>
         <FlashMessageProvider>
-          <GameDetails />
+          <ContactFormProvider>
+            <GameDetails />
+          </ContactFormProvider>
         </FlashMessageProvider>
       </ViewportProvider>,
     );
