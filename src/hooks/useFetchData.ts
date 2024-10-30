@@ -19,9 +19,6 @@ const useFetchData = <T>(url: string) => {
         setError(`Error: ${res.status} ${res.statusText}`);
       }
     } catch (err) {
-      console.log('****************');
-      console.log(err);
-      console.log('****************');
       setError((err as Error).message);
     } finally {
       setLoading(false);

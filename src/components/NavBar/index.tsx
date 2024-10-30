@@ -16,8 +16,7 @@ import styles from './NavBar.module.css';
 import { useContactForm } from '@/contexts/ContactFormContext';
 
 const NavBar: React.FC = () => {
-  const { isDesktopOrLarger, isLoaded, isMobile, isTablet, isTabletOrSmaller } =
-    useDeviceType();
+  const { isDesktopOrLarger, isLoaded, isMobile, isTablet } = useDeviceType();
   const { isContactFormOpen, setContactFormOpen } = useContactForm();
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [menuOpacity, setMenuOpacity] = useState(0);
