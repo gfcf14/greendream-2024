@@ -1,6 +1,7 @@
 'use client';
 
 import AssetWrapper from '@/components/AssetWrapper';
+import Error from '@/components/Error';
 import Loader from '@/components/Loader';
 import Page from '@/components/Page';
 import Text from '@/components/Text';
@@ -11,9 +12,12 @@ import { Asset } from '@/utils/types';
 
 export default function Games() {
   const { isMobile } = useDeviceType();
-  const { data: games, loading, error } = useFetchData<Asset[]>('/api/games');
-
-  const errorData = <p>{error}</p>;
+  const {
+    data: games,
+    loading,
+    error,
+    refetch,
+  } = useFetchData<Asset[]>('/api/games');
 
   return (
     <>
@@ -24,7 +28,7 @@ export default function Games() {
         {loading ? (
           <Loader />
         ) : error ? (
-          errorData
+          <Error action={refetch} />
         ) : (
           <AssetWrapper>{renderCards(games!, isMobile, 'game')}</AssetWrapper>
         )}

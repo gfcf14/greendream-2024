@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import useDeviceType from '@/utils/useDeviceType';
 import Button from '@/components/Button';
+import Error from '@/components/Error';
 import Loader from '@/components/Loader';
 import Modal from '@/components/Modal';
 import Overlay from '@/components/Overlay';
@@ -21,6 +22,7 @@ const Hero: React.FC = () => {
     data: latestData,
     loading,
     error,
+    refetch,
   } = useFetchData<LatestAsset[]>('/api/latest');
 
   const openLatestWorkModal = () => {
@@ -49,7 +51,13 @@ const Hero: React.FC = () => {
         onClose={closeLatestWorkModal}
         title="LATEST WORK"
       >
-        {loading ? <Loader isModal /> : renderLatestAssets(latestData!)}
+        {error ? (
+          <Error action={refetch} />
+        ) : loading ? (
+          <Loader isModal />
+        ) : (
+          renderLatestAssets(latestData!)
+        )}
       </Modal>
       <div data-testid="hero-wrapper" id={styles['hero-wrapper']}>
         <div

@@ -4,30 +4,39 @@ import GameDetails from '@/app/games/[id]/page';
 import { ContactFormProvider } from '@/contexts/ContactFormContext';
 import { FlashMessageProvider } from '@/contexts/FlashMessageContext';
 import { ViewportProvider } from '@/contexts/ViewportContext';
+import useFetchData from '@/hooks/useFetchData';
 
-const mockGameData = [
-  {
-    id: 1,
-    name: 'Game 1',
-    icon: 'icon1.webp',
-    description: 'Description for Game 1',
-    details: 'detail 1;detail 2',
-    link: '/downloads/test.zip',
-  },
-];
-
+const mockGameData = {
+  id: 1,
+  name: 'Game 1',
+  icon: 'icon1.webp',
+  description: 'Description for Game 1',
+  details: 'detail 1;detail 2',
+  link: '/downloads/test.zip',
+};
 jest.mock('next/navigation', () => ({
   useParams: jest.fn().mockReturnValue({ id: '1' }),
   useRouter: jest.fn(),
+}));
+
+jest.mock('@/hooks/useFetchData', () => ({
+  __esModule: true,
+  default: jest.fn(),
 }));
 
 describe('Game Details Page', () => {
   beforeEach(() => {
     global.fetch = jest.fn(() =>
       Promise.resolve({
-        json: () => Promise.resolve(mockGameData[0]),
+        json: () => Promise.resolve(mockGameData),
       }),
     ) as jest.Mock;
+    (useFetchData as jest.Mock).mockReturnValue({
+      data: mockGameData,
+      loading: false,
+      error: null,
+      refetch: jest.fn(),
+    });
     document.cookie = 'allow-cookies=accept';
   });
 
@@ -53,14 +62,14 @@ describe('Game Details Page', () => {
 
     const title = await screen.findByTestId('text-title');
     expect(title).toBeInTheDocument();
-    expect(title).toHaveTextContent(mockGameData[0].name.toUpperCase());
+    expect(title).toHaveTextContent(mockGameData.name.toUpperCase());
 
     const body = await screen.findByTestId('text-body');
     expect(body).toBeInTheDocument();
-    expect(body).toHaveTextContent(mockGameData[0].description);
+    expect(body).toHaveTextContent(mockGameData.description);
 
     await waitFor(() => {
-      mockGameData[0].details.split(';').forEach((currDetail) => {
+      mockGameData.details.split(';').forEach((currDetail) => {
         expect(screen.getByText(currDetail)).toBeInTheDocument();
         expect(screen.getByText(currDetail)).toBeInTheDocument();
       });

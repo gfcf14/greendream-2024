@@ -1,6 +1,7 @@
 'use client';
 
 import AssetWrapper from '@/components/AssetWrapper';
+import Error from '@/components/Error';
 import Loader from '@/components/Loader';
 import Page from '@/components/Page';
 import Text from '@/components/Text';
@@ -16,9 +17,8 @@ export default function Articles() {
     data: articles,
     loading,
     error,
+    refetch,
   } = useFetchData<Article[]>('/api/articles');
-
-  const errorData = <p>{error}</p>;
 
   return (
     <>
@@ -29,7 +29,7 @@ export default function Articles() {
         {loading ? (
           <Loader />
         ) : error ? (
-          errorData
+          <Error action={refetch} />
         ) : (
           <AssetWrapper>
             {renderArticleCards(

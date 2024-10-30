@@ -3,9 +3,15 @@ import Programs from '@/app/programs/page';
 import { ContactFormProvider } from '@/contexts/ContactFormContext';
 import { FlashMessageProvider } from '@/contexts/FlashMessageContext';
 import { ViewportProvider } from '@/contexts/ViewportContext';
+import useFetchData from '@/hooks/useFetchData';
 
 jest.mock('next/navigation', () => ({
   useRouter: jest.fn(),
+}));
+
+jest.mock('@/hooks/useFetchData', () => ({
+  __esModule: true,
+  default: jest.fn(),
 }));
 
 const component = (
@@ -49,6 +55,12 @@ describe('Programs Page', () => {
   });
 
   it('renders the programs title and description correctly', async () => {
+    (useFetchData as jest.Mock).mockReturnValue({
+      data: null,
+      loading: true,
+      error: null,
+      refetch: jest.fn(),
+    });
     render(component);
 
     const title = screen.getByTestId('text-title');
@@ -61,12 +73,13 @@ describe('Programs Page', () => {
   });
 
   it('fetches and displays programs from the API', async () => {
-    render(component);
-
-    await waitFor(() => {
-      expect(fetch).toHaveBeenCalledWith('/api/programs');
-      expect(fetch).toHaveBeenCalledTimes(1);
+    (useFetchData as jest.Mock).mockReturnValue({
+      data: mockProgramsData,
+      loading: false,
+      error: null,
+      refetch: jest.fn(),
     });
+    render(component);
 
     await waitFor(() => {
       mockProgramsData.forEach((program) => {

@@ -1,6 +1,7 @@
 'use client';
 
 import AssetWrapper from '@/components/AssetWrapper';
+import Error from '@/components/Error';
 import Loader from '@/components/Loader';
 import Page from '@/components/Page';
 import Text from '@/components/Text';
@@ -15,9 +16,8 @@ export default function Programs() {
     data: programs,
     loading,
     error,
+    refetch,
   } = useFetchData<Asset[]>('/api/programs');
-
-  const errorData = <p>{error}</p>;
 
   return (
     <>
@@ -28,7 +28,7 @@ export default function Programs() {
         {loading ? (
           <Loader />
         ) : error ? (
-          errorData
+          <Error action={refetch} />
         ) : (
           <AssetWrapper>
             {renderCards(programs!, isMobile, 'program')}

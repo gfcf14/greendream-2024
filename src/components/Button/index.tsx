@@ -17,7 +17,7 @@ interface ButtonWithAction {
 interface ButtonWithText {
   action?: never;
   text: string;
-  type: 'card' | 'hero' | 'primary' | 'secondary';
+  type: 'card' | 'hero' | 'primary' | 'secondary' | 'warning';
 }
 
 type ButtonProps = (ButtonWithAction | ButtonWithText) & ButtonCommonProps;

@@ -6,6 +6,7 @@ import AssetInfo from '@/components/AssetInfo';
 import AssetLogo from '@/components/AssetLogo';
 import AssetScreenshot from '@/components/AssetScreenshot';
 import Details from '@/components/Details';
+import Error from '@/components/Error';
 import Loader from '@/components/Loader';
 import Page from '@/components/Page';
 import Text from '@/components/Text';
@@ -20,9 +21,8 @@ export default function ProgramDetails() {
     data: program,
     loading,
     error,
+    refetch,
   } = useFetchData<Asset>(`/api/programs/${id}`);
-
-  const errorData = <p>{error}</p>;
 
   const isDownload = !program?.link?.includes('https://');
 
@@ -33,7 +33,10 @@ export default function ProgramDetails() {
         {loading ? (
           <Loader />
         ) : error ? (
-          errorData
+          <>
+            <Error action={refetch} />
+            <p data-testid="error-here">{error}</p>
+          </>
         ) : (
           <>
             <AssetLogo icon={program!.icon} />

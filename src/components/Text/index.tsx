@@ -6,6 +6,7 @@ interface TextProps {
   type:
     | 'body'
     | 'card'
+    | 'error'
     | 'external-link'
     | 'header'
     | 'hero'

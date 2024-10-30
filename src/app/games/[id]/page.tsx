@@ -6,6 +6,7 @@ import AssetInfo from '@/components/AssetInfo';
 import AssetLogo from '@/components/AssetLogo';
 import AssetScreenshot from '@/components/AssetScreenshot';
 import Details from '@/components/Details';
+import Error from '@/components/Error';
 import Loader from '@/components/Loader';
 import Page from '@/components/Page';
 import Text from '@/components/Text';
@@ -20,9 +21,8 @@ export default function GameDetails() {
     data: game,
     loading,
     error,
+    refetch,
   } = useFetchData<Asset>(`/api/games/${id}`);
-
-  const errorData = <p>{error}</p>;
 
   const isDownload = !game?.link.includes('https://');
 
@@ -33,7 +33,7 @@ export default function GameDetails() {
         {loading ? (
           <Loader />
         ) : error ? (
-          errorData
+          <Error action={refetch} />
         ) : (
           <>
             <AssetLogo icon={game!.icon} />

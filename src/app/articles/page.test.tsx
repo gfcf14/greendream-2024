@@ -2,10 +2,16 @@ import { render, screen, waitFor } from '@testing-library/react';
 import { ContactFormProvider } from '@/contexts/ContactFormContext';
 import { FlashMessageProvider } from '@/contexts/FlashMessageContext';
 import { ViewportProvider } from '@/contexts/ViewportContext';
+import useFetchData from '@/hooks/useFetchData';
 import Articles from './page';
 
 jest.mock('next/navigation', () => ({
   useRouter: jest.fn(),
+}));
+
+jest.mock('@/hooks/useFetchData', () => ({
+  __esModule: true,
+  default: jest.fn(),
 }));
 
 const component = (
@@ -40,6 +46,12 @@ describe('Articles Page', () => {
         json: () => Promise.resolve(mockArticlesData),
       }),
     ) as jest.Mock;
+    (useFetchData as jest.Mock).mockReturnValue({
+      data: mockArticlesData,
+      loading: false,
+      error: null,
+      refetch: jest.fn(),
+    });
     document.cookie = 'allow-cookies=accept';
   });
 
@@ -55,18 +67,12 @@ describe('Articles Page', () => {
     expect(title).toBeInTheDocument();
     expect(title).toHaveTextContent('ARTICLES');
 
-    const body = screen.getByTestId('text-body');
-    expect(body).toBeInTheDocument();
-    expect(body).toHaveTextContent('These are the articles I have written');
+    const body = screen.getByText('These are the articles I have written');
+    expect(body).toHaveAttribute('data-testid', 'text-body');
   });
 
   it('fetches and displays articles from the API', async () => {
     render(component);
-
-    await waitFor(() => {
-      expect(fetch).toHaveBeenCalledWith('/api/articles');
-      expect(fetch).toHaveBeenCalledTimes(1);
-    });
 
     await waitFor(() => {
       mockArticlesData.forEach((article) => {

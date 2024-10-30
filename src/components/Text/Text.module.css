@@ -12,6 +12,14 @@
   text-align: center;
 }
 
+.error {
+  color: var(--color-theme-error);
+  font: bold 16px var(--font-primary);
+  min-height: 28px;
+  line-height: 28px;
+  text-align: center;
+}
+
 .external-link {
   color: var(--color-theme-button-primary);
   font: 600 14px var(--font-primary);
@@ -69,6 +77,10 @@
     text-align: left;
   }
 
+  .error {
+    font-size: 20px;
+  }
+
   .external-link {
     font-size: 16px;
   }
@@ -94,6 +106,10 @@
 
 @media (min-width: 1024px) {
   .body {
+    font-size: 24px;
+  }
+
+  .error {
     font-size: 24px;
   }
 
