@@ -15,7 +15,8 @@ import heroBackground from 'P/images/hero-background.svg';
 import styles from './Hero.module.css';
 
 const Hero: React.FC = () => {
-  const { isDesktopOrLarger, isMobile, isTabletOrSmaller } = useDeviceType();
+  const { isDesktopOrLarger, isLoaded, isMobile, isTabletOrSmaller } =
+    useDeviceType();
   const [isShowingLatestWork, setShowingLatestWork] = useState(false);
 
   const {
@@ -70,9 +71,9 @@ const Hero: React.FC = () => {
               type="hero"
             />
           </div>
-          {isTabletOrSmaller && latestWorkButton}
+          {isLoaded && isTabletOrSmaller && latestWorkButton}
         </div>
-        {isDesktopOrLarger && latestWorkButton}
+        {isLoaded && isDesktopOrLarger && latestWorkButton}
       </div>
     </>
   );

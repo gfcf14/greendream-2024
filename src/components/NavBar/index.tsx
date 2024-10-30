@@ -16,7 +16,7 @@ import styles from './NavBar.module.css';
 import { useContactForm } from '@/contexts/ContactFormContext';
 
 const NavBar: React.FC = () => {
-  const { isDesktopOrLarger, isMobile, isTablet, isTabletOrSmaller } =
+  const { isDesktopOrLarger, isLoaded, isMobile, isTablet, isTabletOrSmaller } =
     useDeviceType();
   const { isContactFormOpen, setContactFormOpen } = useContactForm();
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -52,6 +52,15 @@ const NavBar: React.FC = () => {
     contact: openContactForm,
   };
 
+  const menuComponent = isDesktopOrLarger ? (
+    <Menu menuActions={menuActions} />
+  ) : (
+    <Sandwich
+      isOpen={isMobileMenuOpen}
+      onClick={isMobileMenuOpen ? closeMobileMenu : openMobileMenu}
+    />
+  );
+
   return (
     <>
       <Overlay
@@ -86,13 +95,7 @@ const NavBar: React.FC = () => {
               width={162}
             />
           </Link>
-          {isDesktopOrLarger && <Menu menuActions={menuActions} />}
-          {isTabletOrSmaller && (
-            <Sandwich
-              isOpen={isMobileMenuOpen}
-              onClick={isMobileMenuOpen ? closeMobileMenu : openMobileMenu}
-            />
-          )}
+          {isLoaded && menuComponent}
         </div>
         {isMobile && (
           <MobileMenu

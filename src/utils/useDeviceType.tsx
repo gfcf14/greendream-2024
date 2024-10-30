@@ -1,7 +1,7 @@
 import { useViewport } from '@/contexts/ViewportContext';
 
 const useDeviceType = () => {
-  const { width } = useViewport();
+  const { isLoaded, width } = useViewport();
 
   const isMobile = width < 768;
   const isTablet = width >= 768 && width < 1024;
@@ -21,6 +21,7 @@ const useDeviceType = () => {
     isTabletOrLarger,
     isDesktopOrLarger,
     isLargeDesktopForCards,
+    isLoaded,
   };
 };
 

@@ -11,6 +11,7 @@ import React, {
 type ViewportContextType = {
   width: number;
   height: number;
+  isLoaded: boolean;
 };
 
 const ViewportContext = createContext<ViewportContextType | undefined>(
@@ -19,8 +20,9 @@ const ViewportContext = createContext<ViewportContextType | undefined>(
 
 export const ViewportProvider = ({ children }: { children: ReactNode }) => {
   const [size, setSize] = useState<ViewportContextType>({
-    width: 0, // Initialize with 0, because the actual value will be set on the client
+    width: 0,
     height: 0,
+    isLoaded: false,
   });
 
   useEffect(() => {
@@ -29,10 +31,10 @@ export const ViewportProvider = ({ children }: { children: ReactNode }) => {
         setSize({
           width: window.innerWidth,
           height: window.innerHeight,
+          isLoaded: true,
         });
       };
 
-      // Sets initial size
       handleResize();
 
       window.addEventListener('resize', handleResize);
