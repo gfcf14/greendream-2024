@@ -3,9 +3,9 @@ import { useViewport } from '@/contexts/ViewportContext';
 const useDeviceType = () => {
   const { width } = useViewport();
 
-  const isMobile = width <= 768;
-  const isTablet = width >= 768 && width <= 1024;
-  const isDesktop = width >= 1024 && width <= 1440;
+  const isMobile = width < 768;
+  const isTablet = width >= 768 && width < 1024;
+  const isDesktop = width >= 1024 && width < 1440;
   const isLargeDesktop = width >= 1440;
   const isTabletOrSmaller = width < 1024;
   const isTabletOrLarger = width >= 768;
