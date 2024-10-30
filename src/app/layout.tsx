@@ -1,9 +1,8 @@
-import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-import './globals.css';
 import { ContactFormProvider } from '@/contexts/ContactFormContext';
 import { FlashMessageProvider } from '@/contexts/FlashMessageContext';
 import { ViewportProvider } from '@/contexts/ViewportContext';
+import './globals.css';
 
 const inter = Inter({ subsets: ['latin'] });
 

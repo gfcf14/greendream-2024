@@ -21,6 +21,11 @@
   --color-theme-flash-message-1: #e92d2d;
   --color-theme-flash-message-2: #5e1414;
 
+  --color-404-error: #e92d2d;
+  --color-404-warning: #bf6830;
+  --color-404-almost: #d9a630;
+  --color-404-ready: #00805c;
+
   /* GENERIC COLORS */
   --color-black: #000000;
   --color-gray: #808080;
