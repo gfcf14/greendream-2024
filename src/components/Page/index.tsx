@@ -15,11 +15,12 @@ interface PageProps {
 const Page: React.FC<PageProps> = ({ children, isHero = false }) => {
   const [showAlert, setShowAlert] = useState(false);
 
-  useEffect(() => {
-    if (!hasCookie('allow-cookies')) {
-      setShowAlert(true);
-    }
-  }, []);
+  // TODO: enable only when a clear reason to store cookies comes up
+  // useEffect(() => {
+  //   if (!hasCookie('allow-cookies')) {
+  //     setShowAlert(true);
+  //   }
+  // }, []);
 
   const handleAccept = () => {
     setCookie('allow-cookies', 'accept');
