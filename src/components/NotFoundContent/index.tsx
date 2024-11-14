@@ -1,9 +1,11 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { useRouter } from 'next/navigation';
 import styles from './NotFoundContent.module.css';
 
 const NotFoundContent: React.FC = () => {
+  const router = useRouter();
   const [slidIn, slideIn] = useState(false);
   const [startCountDown, setCountDown] = useState(false);
   const [code, setCode] = useState(404);
@@ -41,7 +43,7 @@ const NotFoundContent: React.FC = () => {
       );
       timeouts.push(
         setTimeout(() => {
-          window.location.href = '/';
+          router.push('/');
         }, 10000),
       );
     }

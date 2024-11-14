@@ -41,6 +41,7 @@ describe('Hero component', () => {
   it('renders the hero text correctly', () => {
     (useDeviceType as jest.Mock).mockReturnValue({
       isDesktopOrLarger: true,
+      isLoaded: true,
       isTabletOrSmaller: false,
     });
 
@@ -55,6 +56,7 @@ describe('Hero component', () => {
   it('renders the button on desktop screens', () => {
     (useDeviceType as jest.Mock).mockReturnValue({
       isDesktopOrLarger: true,
+      isLoaded: true,
       isTabletOrSmaller: false,
     });
 
@@ -69,6 +71,7 @@ describe('Hero component', () => {
   it('renders the button on tablet or smaller screens', () => {
     (useDeviceType as jest.Mock).mockReturnValue({
       isDesktopOrLarger: false,
+      isLoaded: true,
       isTabletOrSmaller: true,
     });
 
@@ -83,6 +86,7 @@ describe('Hero component', () => {
   it('does not render the desktop button when on tablet or smaller screens', () => {
     (useDeviceType as jest.Mock).mockReturnValue({
       isDesktopOrLarger: false,
+      isLoaded: true,
       isTabletOrSmaller: true,
     });
 
@@ -97,6 +101,7 @@ describe('Hero component', () => {
   it('does not render the tablet button when on desktop screens', () => {
     (useDeviceType as jest.Mock).mockReturnValue({
       isDesktopOrLarger: true,
+      isLoaded: true,
       isTabletOrSmaller: false,
     });
 

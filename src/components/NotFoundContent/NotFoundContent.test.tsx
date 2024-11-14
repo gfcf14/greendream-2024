@@ -1,6 +1,10 @@
 import { render, screen } from '@testing-library/react';
 import NotFoundContent from '.';
 
+jest.mock('next/navigation', () => ({
+  useRouter: jest.fn(),
+}));
+
 describe('NotFoundContent component', () => {
   it('renders the component successfully', () => {
     render(<NotFoundContent />);

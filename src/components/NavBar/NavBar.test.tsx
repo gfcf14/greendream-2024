@@ -28,6 +28,7 @@ describe('NavBar Component', () => {
   it('renders the logo correctly', () => {
     mockUseDeviceType.mockReturnValue({
       isDesktopOrLarger: true,
+      isLoaded: true,
       isMobile: false,
       isTablet: false,
       isTabletOrSmaller: false,
@@ -42,6 +43,7 @@ describe('NavBar Component', () => {
   it('renders the Menu on desktop', () => {
     mockUseDeviceType.mockReturnValue({
       isDesktopOrLarger: true,
+      isLoaded: true,
       isMobile: false,
       isTablet: false,
       isTabletOrSmaller: false,
@@ -55,6 +57,7 @@ describe('NavBar Component', () => {
   it('renders the Sandwich on tablet or smaller', () => {
     mockUseDeviceType.mockReturnValue({
       isDesktopOrLarger: false,
+      isLoaded: true,
       isMobile: false,
       isTablet: true,
       isTabletOrSmaller: true,
@@ -67,6 +70,7 @@ describe('NavBar Component', () => {
   it('opens and closes the mobile menu', () => {
     mockUseDeviceType.mockReturnValue({
       isDesktopOrLarger: false,
+      isLoaded: true,
       isMobile: true,
       isTablet: false,
       isTabletOrSmaller: true,
@@ -86,6 +90,7 @@ describe('NavBar Component', () => {
   it('closes the mobile menu when clicking the overlay', () => {
     mockUseDeviceType.mockReturnValue({
       isDesktopOrLarger: false,
+      isLoaded: true,
       isMobile: true,
       isTablet: false,
       isTabletOrSmaller: true,
@@ -104,6 +109,7 @@ describe('NavBar Component', () => {
   it('opens and closes the tablet menu', () => {
     mockUseDeviceType.mockReturnValue({
       isDesktopOrLarger: false,
+      isLoaded: true,
       isMobile: false,
       isTablet: true,
       isTabletOrSmaller: true,
@@ -123,6 +129,7 @@ describe('NavBar Component', () => {
   it('closes the tablet menu when clicking the overlay', () => {
     mockUseDeviceType.mockReturnValue({
       isDesktopOrLarger: false,
+      isLoaded: true,
       isMobile: false,
       isTablet: true,
       isTabletOrSmaller: true,
