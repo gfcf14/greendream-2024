@@ -6,14 +6,17 @@ describe('ExternalLinkWrapper component', () => {
     const wrapperType = 'comic';
 
     render(
-      <ExternalLinkWrapper type={wrapperType}>
+      <ExternalLinkWrapper linkCount={3} type={wrapperType}>
         <p>test</p>
       </ExternalLinkWrapper>,
     );
 
-    expect(
-      screen.getByTestId(`external-${wrapperType}-links-wrapper`),
-    ).toBeInTheDocument();
+    const externalLinkWrapper = screen.getByTestId(
+      `external-${wrapperType}-links-wrapper`,
+    );
+
+    expect(externalLinkWrapper).toBeInTheDocument();
+    expect(externalLinkWrapper).toHaveClass('triples');
     expect(screen.getByText(/test/i)).toBeInTheDocument();
   });
 });

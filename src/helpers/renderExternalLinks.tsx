@@ -7,7 +7,7 @@ export const renderExternalLinks = (
   type: 'comic' | 'creative' | 'professional',
 ) => {
   return (
-    <ExternalLinkWrapper type={type}>
+    <ExternalLinkWrapper linkCount={links.length} type={type}>
       {links.map((currLink, i) => (
         <ExternalLink key={`external-link-${i}`} {...currLink} />
       ))}

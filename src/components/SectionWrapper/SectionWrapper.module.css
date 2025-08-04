@@ -4,9 +4,3 @@
   gap: 32px;
   margin: 0 0 32px;
 }
-
-@media (min-width: 768px) {
-  .section-wrapper {
-    flex-direction: row;
-  }
-}

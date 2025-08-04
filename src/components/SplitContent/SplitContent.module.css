@@ -1,6 +1,5 @@
 .image-container {
   display: flex;
-  width: calc(50% - 16px);
 }
 .image-container img {
   margin: auto;
@@ -16,11 +15,11 @@
 
 .text-container {
   margin: auto;
-  width: calc(50% - 16px);
 }
 
 .wrapper {
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   gap: 32px;
 }

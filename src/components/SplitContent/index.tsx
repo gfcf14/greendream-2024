@@ -12,7 +12,6 @@ interface SplitContentProps {
 const SplitContent: React.FC<SplitContentProps> = ({
   boundless = false,
   image,
-  imageFirst = false,
   rounded = false,
   text,
 }) => {
@@ -32,21 +31,12 @@ const SplitContent: React.FC<SplitContentProps> = ({
     </div>
   );
 
-  const content = imageFirst ? (
-    <>
-      {imageComponent}
-      {textComponent}
-    </>
-  ) : (
-    <>
-      {textComponent}
-      {imageComponent}
-    </>
-  );
-
   return (
     <div className={styles.wrapper} data-testid="split-content-wrapper">
-      {content}
+      <>
+        {imageComponent}
+        {textComponent}
+      </>
     </div>
   );
 };
