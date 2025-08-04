@@ -23,7 +23,7 @@ describe('About page', () => {
     expect(screen.getAllByTestId('section-wrapper')).toHaveLength(2);
     expect(screen.getAllByTestId('section')).toHaveLength(5);
     expect(screen.getAllByTestId('split-content-wrapper')).toHaveLength(3);
-    expect(screen.getAllByTestId('call-to-action-wrapper')).toHaveLength(1);
+    expect(screen.getAllByTestId('call-to-action-wrapper')).toHaveLength(3);
 
     // check how many professional links there are
     const professionalLinksWrapper = screen.getByTestId(

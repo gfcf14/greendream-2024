@@ -2,15 +2,21 @@
 
 import Button from '@/components/Button';
 import CallToAction from '@/components/CallToAction';
-import ExternalLink from '@/components/ExternalLink';
 import Page from '@/components/Page';
 import Section from '@/components/Section';
 import SectionWrapper from '@/components/SectionWrapper';
 import SplitContent from '@/components/SplitContent';
 import Text from '@/components/Text';
-import { comicLinks, creativeLinks, professionalLinks } from '@/constants';
+import {
+  artPortfolioLink,
+  comicLinks,
+  creativeLinks,
+  professionalLinks,
+  webcomicViewerLink,
+} from '@/constants';
 import { useContactForm } from '@/contexts/ContactFormContext';
 import { downloadFile } from '@/helpers/downloadFile';
+import { openExternalLink } from '@/helpers/openExternalLink';
 import { renderExternalLinks } from '@/helpers/renderExternalLinks';
 
 export default function About() {
@@ -62,6 +68,7 @@ export default function About() {
 
         <CallToAction
           buttonAction={openContactForm}
+          buttonText="CONTACT ME"
           text="If you have any questions, please feel free to contact me pushing the button below or the action button in the nav menu."
         ></CallToAction>
 
@@ -81,6 +88,12 @@ export default function About() {
             {renderExternalLinks(creativeLinks, 'creative')}
           </Section>
 
+          <CallToAction
+            buttonAction={openExternalLink(artPortfolioLink)}
+            buttonText="VIEW MY ART PORTFOLIO"
+            text="I have also developed a separate website to host all my artworks independent of any other work."
+          ></CallToAction>
+
           <Section>
             <Text contained content="WEBDEV TOONS" type="title" />
             <SplitContent
@@ -90,6 +103,12 @@ export default function About() {
             />
             {renderExternalLinks(comicLinks, 'comic')}
           </Section>
+
+          <CallToAction
+            buttonAction={openExternalLink(webcomicViewerLink)}
+            buttonText="GO TO MY WEBCOMIC VIEWER"
+            text="I have also developed a separate website to host all my webcomics independent of any other work."
+          ></CallToAction>
         </SectionWrapper>
       </Page>
     </>

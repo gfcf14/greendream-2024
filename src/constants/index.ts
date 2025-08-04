@@ -131,3 +131,7 @@ export const professionalLinks: ExternalLink[] = [
     url: 'https://codepen.io/gfcf14',
   },
 ];
+
+export const artPortfolioLink =
+  'https://gfcf14-art-cjhfgxdxe8c6eree.eastus2-01.azurewebsites.net/';
+export const webcomicViewerLink = 'https://webdevtoons.vercel.app/';
