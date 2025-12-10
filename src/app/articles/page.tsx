@@ -7,18 +7,14 @@ import Page from '@/components/Page';
 import Text from '@/components/Text';
 import { renderArticleCards } from '@/helpers/renderArticleCards';
 import useFetchData from '@/hooks/useFetchData';
-import { Article } from '@/utils/types';
+import { ArticleResponse } from '@/utils/types';
 import useDeviceType from '@/utils/useDeviceType';
 
 export default function Articles() {
   const { isDesktopOrLarger, isLargeDesktopForCards, isMobile } =
     useDeviceType();
-  const {
-    data: articles,
-    loading,
-    error,
-    refetch,
-  } = useFetchData<Article[]>('/api/articles');
+  const { data, loading, error, refetch } =
+    useFetchData<ArticleResponse>('/api/articles');
 
   return (
     <>
@@ -32,13 +28,14 @@ export default function Articles() {
           <Error action={refetch} />
         ) : (
           <AssetWrapper>
-            {renderArticleCards(
-              articles!,
-              isDesktopOrLarger,
-              isLargeDesktopForCards,
-              isMobile,
-              'article',
-            )}
+            {data?.status === 200 &&
+              renderArticleCards(
+                data?.articles,
+                isDesktopOrLarger,
+                isLargeDesktopForCards,
+                isMobile,
+                'article',
+              )}
           </AssetWrapper>
         )}
       </Page>

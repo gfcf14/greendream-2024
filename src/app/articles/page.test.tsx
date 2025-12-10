@@ -47,7 +47,7 @@ describe('Articles Page', () => {
       }),
     ) as jest.Mock;
     (useFetchData as jest.Mock).mockReturnValue({
-      data: mockArticlesData,
+      data: { articles: mockArticlesData, status: 200 },
       loading: false,
       error: null,
       refetch: jest.fn(),

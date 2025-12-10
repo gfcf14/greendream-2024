@@ -5,8 +5,10 @@ const nextConfig = {
       {
         protocol: 'https',
         hostname: 'miro.medium.com',
-        port: '',
-        pathname: '/v2/resize:fill:320:214/*',
+      },
+      {
+        protocol: 'https',
+        hostname: 'cdn-images-1.medium.com',
       },
     ],
   },

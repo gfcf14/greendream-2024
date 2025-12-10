@@ -14,7 +14,7 @@ export const renderArticleCards = (
 ) => {
   const lineCount = isDesktopOrLarger
     ? Math.ceil(
-        Math.max(...articles.map((currArticle) => currArticle.title.length)) /
+        Math.max(...articles?.map((currArticle) => currArticle.title.length)) /
           (isLargeDesktopForCards
             ? articleCardLineCharLargeDesktop
             : articleCardLineChar),

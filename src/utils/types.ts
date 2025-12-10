@@ -1,3 +1,8 @@
+export interface ArticleResponse {
+  articles: Article[];
+  error?: string;
+  status: number;
+}
 export interface Article {
   description: string;
   image: string;
