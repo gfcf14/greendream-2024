@@ -40,7 +40,7 @@ export async function GET() {
 
         const rssText = await rssResponse.text();
         const $rss = cheerio.load(rssText, { xmlMode: true });
-        const lastArticle = $rss('item').last();
+        const lastArticle = $rss('item').first();
 
         const contentEncoded = lastArticle
           .find('content\\:encoded')
